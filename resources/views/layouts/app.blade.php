@@ -112,21 +112,8 @@
                                 <p class="text-sm font-bold text-slate-800">{{ auth()->user()->name }}</p>
                                 <p class="text-xs text-indigo-600 font-medium">{{ auth()->user()->isTeacher() ? 'Profesor' : 'Alumno' }}</p>
                             </div>
-                            
-                            <!-- Cambiar perfil rápido (conveniente para pruebas) -->
-                            <div class="px-2 py-1.5">
-                                @if(auth()->user()->isStudent())
-                                    <a href="{{ route('quick.login', 'profesor') }}" class="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-purple-50 hover:text-purple-700 rounded-lg">
-                                        <i class="fa-solid fa-user-tie text-purple-500"></i> Cambiar a Modo Profesor
-                                    </a>
-                                @else
-                                    <a href="{{ route('quick.login', 'emanuel') }}" class="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-indigo-50 hover:text-indigo-700 rounded-lg">
-                                        <i class="fa-solid fa-user-graduate text-indigo-500"></i> Cambiar a Emanuel
-                                    </a>
-                                @endif
-                            </div>
 
-                            <div class="border-t border-slate-100 pt-1">
+                            <div class="pt-1">
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <button type="submit" class="w-full text-left flex items-center gap-2 px-4 py-2 text-sm text-rose-600 hover:bg-rose-50 font-semibold">
