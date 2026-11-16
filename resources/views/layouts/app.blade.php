@@ -49,7 +49,7 @@
     </style>
     @yield('styles')
 </head>
-<body class="h-full flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white" x-data="{ uploadModal: false }">
+<body class="h-full flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white" x-data="{ uploadModal: false, selectedSubject: 1 }">
 
     <!-- Navbar Superior -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm backdrop-blur-md bg-white/95">
@@ -174,50 +174,72 @@
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Materia *</label>
                     <div class="grid grid-cols-2 gap-3">
-                        <label class="relative flex flex-col p-3 border-2 rounded-2xl cursor-pointer hover:border-indigo-500 transition-all has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50/50">
-                            <input type="radio" name="subject_id" value="1" class="sr-only" checked>
+                        <label class="relative flex flex-col p-3 border-2 rounded-2xl cursor-pointer hover:border-indigo-500 transition-all"
+                               :class="selectedSubject == 1 ? 'border-indigo-600 bg-indigo-50/50 ring-2 ring-indigo-500/20' : 'border-slate-200 bg-white'">
+                            <input type="radio" name="subject_id" value="1" x-model="selectedSubject" class="sr-only">
                             <span class="flex items-center gap-2 font-bold text-slate-800 text-sm">
                                 <i class="fa-solid fa-calculator text-indigo-600"></i> Matemática
                             </span>
-                            <span class="text-xs text-slate-400 mt-1">Álgebra, ejercicios</span>
+                            <span class="text-xs text-slate-400 mt-1">Fotos del cuaderno</span>
                         </label>
 
-                        <label class="relative flex flex-col p-3 border-2 rounded-2xl cursor-pointer hover:border-emerald-500 transition-all has-[:checked]:border-emerald-600 has-[:checked]:bg-emerald-50/50">
-                            <input type="radio" name="subject_id" value="2" class="sr-only">
+                        <label class="relative flex flex-col p-3 border-2 rounded-2xl cursor-pointer hover:border-emerald-500 transition-all"
+                               :class="selectedSubject == 2 ? 'border-emerald-600 bg-emerald-50/50 ring-2 ring-emerald-500/20' : 'border-slate-200 bg-white'">
+                            <input type="radio" name="subject_id" value="2" x-model="selectedSubject" class="sr-only">
                             <span class="flex items-center gap-2 font-bold text-slate-800 text-sm">
                                 <i class="fa-solid fa-laptop-code text-emerald-600"></i> Computación
                             </span>
-                            <span class="text-xs text-slate-400 mt-1">Código, proyectos</span>
+                            <span class="text-xs text-slate-400 mt-1">Enlace del proyecto web</span>
                         </label>
                     </div>
                 </div>
 
                 <!-- Título del Deber -->
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Título o Tema del Deber *</label>
-                    <input type="text" name="title" required placeholder="Ej. Taller de factorización pág. 24" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-medium">
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Título del Deber *</label>
+                    <input type="text" name="title" required :placeholder="selectedSubject == 1 ? 'Ej. Ejercicios de Polinomios Pág. 15' : 'Ej. Portafolio Web / Napoleón / Horario'" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-medium">
+                </div>
+
+                <!-- Enlace Web del Proyecto (Solo Computación) -->
+                <div x-show="selectedSubject == 2" x-transition class="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200 space-y-2">
+                    <label class="block text-xs font-bold text-emerald-900 uppercase tracking-wider flex items-center justify-between">
+                        <span>Enlace Web del Proyecto *</span>
+                        <span class="text-[10px] text-emerald-700 font-semibold normal-case">GitHub Pages / Web en Vivo</span>
+                    </label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-emerald-600">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <input type="url" name="link_url" :required="selectedSubject == 2" :disabled="selectedSubject != 2" placeholder="https://paholaguevara2977-eng.github.io/portafolio/..." class="w-full pl-10 pr-4 py-3 rounded-xl border border-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm font-semibold bg-white text-slate-800 placeholder-slate-400">
+                    </div>
+                    <p class="text-[11px] text-emerald-700">Pega aquí el enlace directo a tu página o trabajo en GitHub Pages.</p>
+                </div>
+
+                <!-- Selector de Archivos (Fotos o Documentos) -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2 flex items-center justify-between">
+                        <span x-text="selectedSubject == 1 ? 'Fotos del Deber (Cuaderno / Hoja) *' : 'Captura de Pantalla o Archivo (Opcional)'"></span>
+                        <span class="text-[10px] font-semibold" :class="selectedSubject == 1 ? 'text-indigo-600' : 'text-slate-400'" x-text="selectedSubject == 1 ? 'Obligatorio' : 'Opcional'"></span>
+                    </label>
+                    <div class="border-2 border-dashed rounded-2xl p-6 text-center cursor-pointer transition-colors bg-slate-50/50 relative"
+                         :class="selectedSubject == 1 ? 'border-indigo-300 hover:border-indigo-500' : 'border-slate-300 hover:border-emerald-500'">
+                        <input type="file" name="files[]" multiple :required="selectedSubject == 1" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" id="fileInput" onchange="updateFileLabel(this)">
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-3"
+                                 :class="selectedSubject == 1 ? 'bg-indigo-100 text-indigo-600' : 'bg-emerald-100 text-emerald-600'">
+                                <i class="fa-solid fa-camera text-xl sm:hidden"></i>
+                                <i class="fa-solid fa-file-arrow-up text-xl hidden sm:inline"></i>
+                            </div>
+                            <p class="text-sm font-bold text-slate-800" id="fileLabel" x-text="selectedSubject == 1 ? 'Haz clic para tomar fotos o elegir archivos' : 'Haz clic para adjuntar captura o imagen (opcional)'"></p>
+                            <p class="text-xs text-slate-400 mt-1" x-text="selectedSubject == 1 ? 'Fotos claras del cuaderno o ejercicios resueltos (Hasta 50MB)' : 'Sube una captura de tu web o diseño si lo deseas (opcional)'"></p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Notas del estudiante -->
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Notas o Preguntas para el Profesor (Opcional)</label>
-                    <textarea name="student_notes" rows="2" placeholder="Profe Carlos, adjunto las fotos de los ejercicios impares..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-medium"></textarea>
-                </div>
-
-                <!-- Selector de Archivos (Fotos o Documentos) -->
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Archivos del Deber (Fotos, PDF, Docs, Código) *</label>
-                    <div class="border-2 border-dashed border-slate-300 hover:border-indigo-500 rounded-2xl p-6 text-center cursor-pointer transition-colors bg-slate-50/50 relative">
-                        <input type="file" name="files[]" multiple required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" id="fileInput" onchange="updateFileLabel(this)">
-                        <div class="flex flex-col items-center">
-                            <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-3">
-                                <i class="fa-solid fa-camera text-xl sm:hidden"></i>
-                                <i class="fa-solid fa-file-arrow-up text-xl hidden sm:inline"></i>
-                            </div>
-                            <p class="text-sm font-bold text-slate-800" id="fileLabel">Haz clic para tomar fotos o elegir archivos</p>
-                            <p class="text-xs text-slate-400 mt-1">Soporta múltiples imágenes, PDFs, Word, Python, etc. (Hasta 50MB)</p>
-                        </div>
-                    </div>
+                    <textarea name="student_notes" rows="2" placeholder="Profe Carlos, adjunto las fotos de los ejercicios o comentarios del proyecto..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-medium"></textarea>
                 </div>
 
                 <!-- Botones -->

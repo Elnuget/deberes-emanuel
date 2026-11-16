@@ -43,6 +43,7 @@ return new class extends Migration
             $table->foreignId('student_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('assignment_id')->nullable()->constrained('assignments')->onDelete('set null');
             $table->string('title');
+            $table->string('link_url')->nullable(); // Enlace del proyecto (ej: GitHub Pages para computación)
             $table->text('student_notes')->nullable();
             $table->string('status')->default('submitted'); // submitted, reviewed, resubmit
             $table->decimal('grade', 4, 2)->nullable(); // e.g. 10.00

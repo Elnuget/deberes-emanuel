@@ -3,7 +3,7 @@
 @section('title', 'Inicio - Deberes Emanuel')
 
 @section('content')
-<div class="space-y-8 pb-16 md:pb-6" x-data="{ preSelectedSubject: 1 }">
+<div class="space-y-8 pb-16 md:pb-6">
 
     <!-- Banner de Bienvenida -->
     <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-900 via-indigo-800 to-purple-900 p-6 sm:p-10 text-white shadow-xl shadow-indigo-200/50">
@@ -19,11 +19,11 @@
             </p>
 
             <div class="mt-6 flex flex-wrap gap-3">
-                <button @click="preSelectedSubject = 1; uploadModal = true" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white text-indigo-900 font-extrabold text-sm hover:bg-indigo-50 shadow-lg shadow-black/10 transition-all active:scale-95">
+                <button @click="selectedSubject = 1; uploadModal = true" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white text-indigo-900 font-extrabold text-sm hover:bg-indigo-50 shadow-lg shadow-black/10 transition-all active:scale-95">
                     <i class="fa-solid fa-calculator text-indigo-600"></i>
                     <span>Subir Matemática</span>
                 </button>
-                <button @click="preSelectedSubject = 2; uploadModal = true" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-white font-extrabold text-sm shadow-lg shadow-emerald-900/20 transition-all active:scale-95">
+                <button @click="selectedSubject = 2; uploadModal = true" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-white font-extrabold text-sm shadow-lg shadow-emerald-900/20 transition-all active:scale-95">
                     <i class="fa-solid fa-laptop-code"></i>
                     <span>Subir Computación</span>
                 </button>
@@ -116,7 +116,7 @@
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
 
-                        <button @click="preSelectedSubject = {{ $subject->id }}; uploadModal = true" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-extrabold {{ $isMath ? 'bg-indigo-600 hover:bg-indigo-700 shadow-indigo-200' : 'bg-emerald-600 hover:bg-emerald-700 shadow-emerald-200' }} text-white shadow-md transition-all active:scale-95">
+                        <button @click="selectedSubject = {{ $subject->id }}; uploadModal = true" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-extrabold {{ $isMath ? 'bg-indigo-600 hover:bg-indigo-700 shadow-indigo-200' : 'bg-emerald-600 hover:bg-emerald-700 shadow-emerald-200' }} text-white shadow-md transition-all active:scale-95">
                             <i class="fa-solid fa-upload"></i> Subir Deber
                         </button>
                     </div>
@@ -160,7 +160,7 @@
 
                         <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
                             <span class="text-xs text-slate-400 font-medium">Asignado por {{ $assignment->teacher->name }}</span>
-                            <button @click="preSelectedSubject = {{ $assignment->subject_id }}; uploadModal = true" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-sm transition-all active:scale-95">
+                            <button @click="selectedSubject = {{ $assignment->subject_id }}; uploadModal = true" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-sm transition-all active:scale-95">
                                 <i class="fa-solid fa-arrow-up-from-bracket"></i> Entregar Ahora
                             </button>
                         </div>
@@ -219,8 +219,16 @@
                                 {{ $sub->title }}
                             </h3>
                             
-                            <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                                <i class="fa-regular fa-clock"></i> {{ $sub->submitted_at->diffForHumans() }} &bull; {{ $sub->files->count() }} archivo(s)
+                            <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5 flex-wrap">
+                                <span><i class="fa-regular fa-clock"></i> {{ $sub->submitted_at->diffForHumans() }}</span>
+                                @if($sub->link_url)
+                                    <span>&bull;</span>
+                                    <span class="text-emerald-600 font-bold"><i class="fa-solid fa-globe"></i> Enlace Web</span>
+                                @endif
+                                @if($sub->files->count() > 0)
+                                    <span>&bull;</span>
+                                    <span>{{ $sub->files->count() }} archivo(s)</span>
+                                @endif
                             </p>
 
                             @if($sub->teacher_feedback)

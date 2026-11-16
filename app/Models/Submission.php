@@ -13,6 +13,7 @@ class Submission extends Model
         'student_id',
         'assignment_id',
         'title',
+        'link_url',
         'student_notes',
         'status',
         'grade',

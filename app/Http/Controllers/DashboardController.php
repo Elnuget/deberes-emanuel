@@ -116,20 +116,36 @@ class DashboardController extends Controller
 
     public function submitHomework(Request $request)
     {
-        $validated = $request->validate([
+        $subject = Subject::findOrFail($request->input('subject_id'));
+        $isMath = $subject->slug === 'matematica';
+
+        $rules = [
             'subject_id' => 'required|exists:subjects,id',
             'assignment_id' => 'nullable|exists:assignments,id',
             'title' => 'required|string|max:255',
             'student_notes' => 'nullable|string',
-            'files' => 'required|array|min:1',
-            'files.*' => 'file|max:51200', // max 50MB por archivo
-        ]);
+        ];
+
+        if ($isMath) {
+            // Matemática: Título + Imagen obligatoria
+            $rules['files'] = 'required|array|min:1';
+            $rules['files.*'] = 'file|max:51200';
+            $rules['link_url'] = 'nullable|string';
+        } else {
+            // Computación: Título + Enlace + Imagen opcional (nuleable)
+            $rules['link_url'] = 'required|string|max:1000';
+            $rules['files'] = 'nullable|array';
+            $rules['files.*'] = 'nullable|file|max:51200';
+        }
+
+        $validated = $request->validate($rules);
 
         $submission = Submission::create([
             'subject_id' => $validated['subject_id'],
             'student_id' => Auth::id(),
             'assignment_id' => $validated['assignment_id'] ?? null,
             'title' => $validated['title'],
+            'link_url' => $validated['link_url'] ?? null,
             'student_notes' => $validated['student_notes'] ?? null,
             'status' => 'submitted',
             'submitted_at' => now(),
@@ -137,6 +153,7 @@ class DashboardController extends Controller
 
         if ($request->hasFile('files')) {
             foreach ($request->file('files') as $file) {
+                if (!$file) continue;
                 $origName = $file->getClientOriginalName();
                 $size = $file->getSize();
                 $extension = strtolower($file->getClientOriginalExtension());

@@ -45,14 +45,35 @@
             <span><i class="fa-regular fa-calendar-days mr-1"></i> Entregado el {{ $submission->submitted_at->format('d/m/Y \a \l\a\s H:i') }}</span>
         </div>
 
+        @if($submission->link_url)
+            <div class="mt-6 p-4 sm:p-5 rounded-2xl bg-emerald-50 border border-emerald-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-md shadow-emerald-200 shrink-0">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div>
+                        <span class="block text-[11px] font-extrabold uppercase tracking-wider text-emerald-800">Proyecto Web en Vivo (GitHub Pages)</span>
+                        <a href="{{ $submission->link_url }}" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base font-extrabold text-emerald-700 hover:text-emerald-900 underline break-all inline-flex items-center gap-1.5 mt-0.5">
+                            {{ $submission->link_url }}
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                <a href="{{ $submission->link_url }}" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs shadow-md shadow-emerald-200 transition-all flex items-center gap-2 whitespace-nowrap active:scale-95 shrink-0">
+                    <i class="fa-solid fa-up-right-from-square"></i> Abrir Proyecto Web
+                </a>
+            </div>
+        @endif
+
         @if($submission->student_notes)
-            <div class="mt-6 p-4 rounded-2xl bg-slate-50 border border-slate-100 text-sm text-slate-700">
+            <div class="mt-5 p-4 rounded-2xl bg-slate-50 border border-slate-100 text-sm text-slate-700">
                 <span class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Comentario de Emanuel:</span>
                 "{{ $submission->student_notes }}"
             </div>
         @endif
     </div>
 
+    @if($submission->files->isNotEmpty())
     <!-- Archivos Adjuntos (Fotos y Documentos) -->
     <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
         <h2 class="text-lg font-extrabold text-slate-900 tracking-tight mb-4 flex items-center justify-between">
@@ -98,6 +119,7 @@
             @endforeach
         </div>
     </div>
+    @endif
 
     <!-- Bloque de Calificación y Retroalimentación -->
     <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">

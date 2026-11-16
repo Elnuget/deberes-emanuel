@@ -24,7 +24,7 @@
         </div>
 
         @if(auth()->user()->isStudent())
-            <button @click="uploadModal = true" class="px-6 py-3 rounded-2xl bg-white text-slate-900 font-extrabold text-sm shadow-xl hover:bg-slate-50 transition-all active:scale-95 flex items-center gap-2">
+            <button @click="selectedSubject = {{ $subject->id }}; uploadModal = true" class="px-6 py-3 rounded-2xl bg-white text-slate-900 font-extrabold text-sm shadow-xl hover:bg-slate-50 transition-all active:scale-95 flex items-center gap-2">
                 <i class="fa-solid fa-cloud-arrow-up {{ $isMath ? 'text-indigo-600' : 'text-emerald-600' }}"></i>
                 <span>Subir Deber de {{ $subject->name }}</span>
             </button>
@@ -58,7 +58,7 @@
 
                         @if(auth()->user()->isStudent())
                             <div class="mt-4 pt-3 border-t border-slate-100 flex justify-end">
-                                <button @click="uploadModal = true" class="px-4 py-2 rounded-xl {{ $isMath ? 'bg-indigo-600 hover:bg-indigo-700' : 'bg-emerald-600 hover:bg-emerald-700' }} text-white font-bold text-xs shadow-md transition-all">
+                                <button @click="selectedSubject = {{ $subject->id }}; uploadModal = true" class="px-4 py-2 rounded-xl {{ $isMath ? 'bg-indigo-600 hover:bg-indigo-700' : 'bg-emerald-600 hover:bg-emerald-700' }} text-white font-bold text-xs shadow-md transition-all">
                                     <i class="fa-solid fa-upload mr-1"></i> Entregar Deber
                                 </button>
                             </div>
@@ -97,7 +97,15 @@
                                 @endif
                             </div>
                             <h3 class="font-extrabold text-slate-900 group-hover:text-indigo-600 transition-colors line-clamp-1">{{ $sub->title }}</h3>
-                            <p class="text-xs text-slate-500 mt-1">{{ $sub->files->count() }} archivo(s) adjunto(s)</p>
+                            <p class="text-xs text-slate-500 mt-1 flex items-center gap-1.5 flex-wrap">
+                                @if($sub->link_url)
+                                    <span class="text-emerald-600 font-bold"><i class="fa-solid fa-globe"></i> Enlace Web</span>
+                                @endif
+                                @if($sub->files->count() > 0)
+                                    @if($sub->link_url) <span>&bull;</span> @endif
+                                    <span>{{ $sub->files->count() }} archivo(s)</span>
+                                @endif
+                            </p>
 
                             @if($sub->teacher_feedback)
                                 <div class="mt-3 p-2.5 rounded-xl bg-slate-50 text-xs text-slate-600 italic line-clamp-2">

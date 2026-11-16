@@ -65,6 +65,22 @@
                                 </div>
                             @endif
 
+                            @if($sub->link_url)
+                                <div class="mt-4">
+                                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Proyecto Web de Emanuel:</span>
+                                    <a href="{{ $sub->link_url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full p-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-xs text-emerald-900 font-bold group transition-all shadow-sm">
+                                        <span class="truncate flex items-center gap-2">
+                                            <i class="fa-solid fa-globe text-emerald-600 text-base"></i>
+                                            <span class="truncate font-semibold">{{ $sub->link_url }}</span>
+                                        </span>
+                                        <span class="bg-emerald-600 group-hover:bg-emerald-700 text-white px-2.5 py-1 rounded-lg text-[10px] font-extrabold flex items-center gap-1 shadow-sm shrink-0 ml-2">
+                                            Abrir <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            @endif
+
+                            @if($sub->files->isNotEmpty())
                             <!-- Lista rápida de archivos adjuntos -->
                             <div class="mt-4 space-y-1.5">
                                 <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Archivos Adjuntos ({{ $sub->files->count() }}):</p>
@@ -78,6 +94,7 @@
                                     </a>
                                 @endforeach
                             </div>
+                            @endif
                         </div>
 
                         <!-- Formulario de Calificación Rápida -->
@@ -168,7 +185,15 @@
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="font-bold text-slate-900">{{ $sub->title }}</div>
-                                    <div class="text-xs text-slate-400">{{ $sub->files->count() }} archivo(s) adjuntos</div>
+                                    @if($sub->link_url)
+                                        <a href="{{ $sub->link_url }}" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-emerald-600 hover:text-emerald-800 inline-flex items-center gap-1 mt-0.5">
+                                            <i class="fa-solid fa-globe"></i> Proyecto Web
+                                            <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                        </a>
+                                    @endif
+                                    @if($sub->files->count() > 0)
+                                        <div class="text-xs text-slate-400">{{ $sub->files->count() }} archivo(s) adjuntos</div>
+                                    @endif
                                 </td>
                                 <td class="px-6 py-4 text-xs text-slate-500 whitespace-nowrap">
                                     {{ $sub->submitted_at->format('d/m/Y H:i') }}
