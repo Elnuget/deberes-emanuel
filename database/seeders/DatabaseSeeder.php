@@ -86,31 +86,39 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        // 5. Entregas de Computación de Emanuel (4 deberes reales)
+        // 5. Entregas de Computación de Emanuel (4 deberes reales calificados con 10)
         $deberesCompu = [
             [
                 'title' => 'Portafolio',
                 'link_url' => 'https://paholaguevara2977-eng.github.io/portafolio/',
                 'student_notes' => 'Portafolio web principal con enlaces a todos los proyectos y biografía.',
                 'submitted_at' => now()->subDays(3)->setHour(14)->setMinute(20),
+                'grade' => 10.00,
+                'teacher_feedback' => '¡Excelente trabajo, Emanuel! Tu portafolio web está muy bien organizado, la estructura HTML es clara y los enlaces de navegación hacia todos tus proyectos funcionan perfectamente. Gran presentación, orden y diseño visual. ¡Sigue así, tienes un gran futuro en la programación web!',
             ],
             [
                 'title' => 'Napoleón',
                 'link_url' => 'https://paholaguevara2977-eng.github.io/portafolio/napoleon.html',
                 'student_notes' => 'Página web interactiva con la biografía e historia de Napoleón Bonaparte.',
                 'submitted_at' => now()->subDays(2)->setHour(16)->setMinute(45),
+                'grade' => 10.00,
+                'teacher_feedback' => '¡Felicitaciones Emanuel! Gran investigación y magnífica presentación sobre la historia y biografía de Napoleón Bonaparte. Excelente uso de encabezados, párrafos y contenido multimedia bien jerarquizado en HTML. ¡Trabajo impecable!',
             ],
             [
                 'title' => 'Guerra de los Cien Años',
                 'link_url' => 'https://paholaguevara2977-eng.github.io/portafolio/cien-anos.html',
                 'student_notes' => 'Página web temática con la cronología y causas de la Guerra de los Cien Años.',
                 'submitted_at' => now()->subDays(1)->setHour(11)->setMinute(10),
+                'grade' => 10.00,
+                'teacher_feedback' => '¡Extraordinario desempeño, Emanuel! Lograste sintetizar las causas, etapas y cronología de la Guerra de los Cien Años de forma muy clara y atractiva. El código HTML está limpio y bien estructurado. ¡Excelente dedicación!',
             ],
             [
                 'title' => 'Horario',
                 'link_url' => 'https://paholaguevara2977-eng.github.io/portafolio/horario.html',
                 'student_notes' => 'Página web estructurada con tabla HTML del horario semanal.',
                 'submitted_at' => now()->subHours(5)->setMinute(30),
+                'grade' => 10.00,
+                'teacher_feedback' => '¡Trabajo perfecto, Emanuel! El dominio que demostraste en la construcción y alineación de la tabla HTML para tu horario semanal es sobresaliente. Filas, columnas y celdas perfectamente cuadradas y legibles. ¡Felicitaciones por tu esfuerzo!',
             ],
         ];
 
@@ -125,10 +133,11 @@ class DatabaseSeeder extends Seeder
                     'assignment_id' => $asigCompu->id,
                     'link_url' => $deb['link_url'],
                     'student_notes' => $deb['student_notes'],
-                    'status' => 'submitted', // Pendiente para que Carlos le ponga nota y retroalimentación
-                    'grade' => null,
-                    'teacher_feedback' => null,
+                    'status' => 'reviewed',
+                    'grade' => $deb['grade'],
+                    'teacher_feedback' => $deb['teacher_feedback'],
                     'submitted_at' => $deb['submitted_at'],
+                    'reviewed_at' => now()->subHours(1),
                 ]
             );
         }
