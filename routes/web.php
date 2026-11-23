@@ -9,6 +9,12 @@ Route::get('/', function () {
     return auth()->check() ? redirect()->route('dashboard') : redirect()->route('login');
 });
 
+// Ruta Pública: Informe Oficial de Avances Unidad 1 (Accesible sin login para compartir y exportar PDF)
+Route::get('/informe/unidad-1', [DashboardController::class, 'reportUnit1'])->name('report.unit1');
+Route::get('/informe-unidad-1', function () {
+    return redirect()->route('report.unit1');
+});
+
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

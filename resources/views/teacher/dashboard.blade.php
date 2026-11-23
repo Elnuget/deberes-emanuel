@@ -15,10 +15,16 @@
             <p class="text-xs sm:text-sm text-slate-400 mt-1">Supervisión académica de Matemática y Computación para Emanuel</p>
         </div>
 
-        <button @click="createModal = true" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-extrabold text-sm shadow-lg shadow-indigo-500/25 transition-all active:scale-95">
-            <i class="fa-solid fa-plus"></i>
-            <span>Asignar Nueva Tarea</span>
-        </button>
+        <div class="flex items-center gap-2.5 flex-wrap">
+            <a href="{{ route('report.unit1') }}" class="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-extrabold text-sm border border-white/20 transition-all active:scale-95 shadow-sm">
+                <i class="fa-solid fa-file-invoice text-amber-300"></i>
+                <span>Ver Informe Unidad 1 (PDF)</span>
+            </a>
+            <button @click="createModal = true" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-extrabold text-sm shadow-lg shadow-indigo-500/25 transition-all active:scale-95">
+                <i class="fa-solid fa-plus"></i>
+                <span>Asignar Nueva Tarea</span>
+            </button>
+        </div>
     </div>
 
     <!-- Sección 1: Entregas Pendientes de Revisar (Prioridad) -->

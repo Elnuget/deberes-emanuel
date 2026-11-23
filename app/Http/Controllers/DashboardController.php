@@ -6,6 +6,7 @@ use App\Models\Assignment;
 use App\Models\Subject;
 use App\Models\Submission;
 use App\Models\SubmissionFile;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -263,5 +264,39 @@ class DashboardController extends Controller
         }
 
         return response()->download($path, $file->original_name);
+    }
+
+    public function reportUnit1()
+    {
+        $student = User::where('role', 'student')->first() ?? (object)[
+            'name' => 'Emanuel',
+            'email' => 'emanuel@deberesem.noxdata.site',
+        ];
+
+        $teacher = User::where('role', 'teacher')->first() ?? (object)[
+            'name' => 'Prof. Carlos Angulo',
+            'email' => 'carlos@deberesem.noxdata.site',
+        ];
+
+        $mathSubject = Subject::where('slug', 'matematica')->first();
+        $compuSubject = Subject::where('slug', 'computacion')->first();
+
+        $compuSubmissions = Submission::where('subject_id', $compuSubject?->id)
+            ->where('student_id', $student?->id ?? 1)
+            ->orderBy('id', 'asc')
+            ->get();
+
+        $mathAssignments = Assignment::where('subject_id', $mathSubject?->id)
+            ->orderBy('id', 'asc')
+            ->get();
+
+        return view('reports.unit1', compact(
+            'student',
+            'teacher',
+            'mathSubject',
+            'compuSubject',
+            'compuSubmissions',
+            'mathAssignments'
+        ));
     }
 }
