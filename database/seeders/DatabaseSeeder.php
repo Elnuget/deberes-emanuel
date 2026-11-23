@@ -63,14 +63,41 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        // 4. Asignaciones de Ejemplo
-        $asigMate = Assignment::updateOrCreate(
-            ['title' => 'Taller 1: Operaciones con Polinomios y Simplificación'],
+        // 4. Asignaciones Reales de Matemática
+        Assignment::where('subject_id', $mate->id)->where('title', 'like', '%Polinomios%')->delete();
+
+        $asigMate1 = Assignment::updateOrCreate(
+            ['title' => 'División: 28.851 ÷ 88'],
             [
                 'subject_id' => $mate->id,
                 'teacher_id' => $carlos->id,
-                'description' => "Resolver los ejercicios de la página 15 del libro. Tomar una fotografía clara del cuaderno con los procedimientos y subir con su título.",
+                'description' => "Resolver en el cuaderno cuadriculado la división de 28.851 para 88 con todo el proceso completo paso a paso (cálculo del cociente, restas sucesivas y residuo final).\nTomar una fotografía nítida y bien iluminada del cuaderno y subirla como evidencia.",
+                'due_date' => now()->addDays(3)->setHour(23)->setMinute(59),
+                'guide_file' => 'guides/guia_division_28851_88.jpg',
+                'status' => 'active',
+            ]
+        );
+
+        $asigMate2 = Assignment::updateOrCreate(
+            ['title' => 'División: 5.932 ÷ 13'],
+            [
+                'subject_id' => $mate->id,
+                'teacher_id' => $carlos->id,
+                'description' => "Resolver en el cuaderno cuadriculado la división de 5.932 para 13 con el proceso ordenado paso a paso, calculando el cociente y el residuo exacto.\nTomar una fotografía clara del cuaderno con los cálculos visibles y subirla como evidencia.",
                 'due_date' => now()->addDays(5)->setHour(23)->setMinute(59),
+                'guide_file' => 'guides/guia_division_5932_13.jpg',
+                'status' => 'active',
+            ]
+        );
+
+        $asigMate3 = Assignment::updateOrCreate(
+            ['title' => 'Estimación y Redondeo: Draw lines to the best estimates'],
+            [
+                'subject_id' => $mate->id,
+                'teacher_id' => $carlos->id,
+                'description' => "Taller de estimación y redondeo: analizar las operaciones y unir con líneas cada ejercicio con su mejor aproximación estimada:\n• 54 293 + 27 886 → about 80 000\n• 8025 ÷ 19 → about 400\n• 116 x 59 → about 6000\n• 893 x 28 → about 27 000\n• 487 x 88 → about 45 000\n• 3216 ÷ 31 → about 100\n• 60 274 - 49 184 → about 10 000\nResolver en la hoja o cuaderno y subir una fotografía nítida de la actividad.",
+                'due_date' => now()->addDays(7)->setHour(23)->setMinute(59),
+                'guide_file' => 'guides/guia_estimaciones_redondeo.jpg',
                 'status' => 'active',
             ]
         );

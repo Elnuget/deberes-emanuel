@@ -156,11 +156,20 @@
                             </div>
                             <h3 class="font-bold text-slate-900 text-base">{{ $assignment->title }}</h3>
                             <p class="text-xs text-slate-500 mt-1 line-clamp-2">{{ $assignment->description }}</p>
+
+                            @if($assignment->guide_file)
+                                <div class="mt-2.5">
+                                    <a href="{{ asset('storage/' . $assignment->guide_file) }}" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] font-bold text-indigo-600 hover:text-indigo-800 bg-indigo-50/80 hover:bg-indigo-100 px-2.5 py-1 rounded-lg border border-indigo-100 transition-colors">
+                                        <i class="fa-solid fa-image"></i> Ver ejercicio guía
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                    </a>
+                                </div>
+                            @endif
                         </div>
 
                         <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
                             <span class="text-xs text-slate-400 font-medium">Asignado por {{ $assignment->teacher->name }}</span>
-                            <button @click="selectedSubject = {{ $assignment->subject_id }}; uploadModal = true" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-sm transition-all active:scale-95">
+                            <button @click="selectedSubject = {{ $assignment->subject_id }}; selectedAssignment = {{ $assignment->id }}; assignmentTitle = '{{ addslashes($assignment->title) }}'; uploadModal = true" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-sm transition-all active:scale-95">
                                 <i class="fa-solid fa-arrow-up-from-bracket"></i> Entregar Ahora
                             </button>
                         </div>

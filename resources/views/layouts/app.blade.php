@@ -49,7 +49,7 @@
     </style>
     @yield('styles')
 </head>
-<body class="h-full flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white" x-data="{ uploadModal: false, selectedSubject: 1 }">
+<body class="h-full flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white" x-data="{ uploadModal: false, selectedSubject: 1, selectedAssignment: null, assignmentTitle: '' }">
 
     <!-- Navbar Superior -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm backdrop-blur-md bg-white/95">
@@ -169,6 +169,18 @@
 
             <form action="{{ route('homework.submit') }}" method="POST" enctype="multipart/form-data" class="mt-6 space-y-5">
                 @csrf
+                <input type="hidden" name="assignment_id" :value="selectedAssignment">
+
+                <!-- Indicador de Tarea Vinculada -->
+                <div x-show="assignmentTitle" class="p-3 bg-indigo-50 border border-indigo-100 rounded-xl flex items-center justify-between text-xs">
+                    <div class="flex items-center gap-2 text-indigo-900 font-bold">
+                        <i class="fa-solid fa-link text-indigo-600"></i>
+                        <span>Tarea: <span class="font-normal" x-text="assignmentTitle"></span></span>
+                    </div>
+                    <button type="button" @click="selectedAssignment = null; assignmentTitle = ''" class="text-indigo-400 hover:text-indigo-600 font-bold text-[11px]">
+                        <i class="fa-solid fa-xmark"></i> Desvincular
+                    </button>
+                </div>
                 
                 <!-- Selector de Materia -->
                 <div>
@@ -197,7 +209,7 @@
                 <!-- Título del Deber -->
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Título del Deber *</label>
-                    <input type="text" name="title" required :placeholder="selectedSubject == 1 ? 'Ej. Ejercicios de Polinomios Pág. 15' : 'Ej. Portafolio Web / Napoleón / Horario'" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-medium">
+                    <input type="text" name="title" required :placeholder="assignmentTitle ? assignmentTitle : (selectedSubject == 1 ? 'Ej. División 28.851 ÷ 88 / Taller de Estimación' : 'Ej. Portafolio Web / Napoleón / Horario')" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-medium">
                 </div>
 
                 <!-- Enlace Web del Proyecto (Solo Computación) -->

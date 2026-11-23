@@ -54,11 +54,25 @@
                             </div>
                             <h3 class="font-bold text-slate-900 text-base">{{ $assignment->title }}</h3>
                             <p class="text-xs text-slate-600 mt-2 whitespace-pre-line">{{ $assignment->description }}</p>
+
+                            @if($assignment->guide_file)
+                                <div class="mt-3 p-3 bg-slate-50 border border-slate-200 rounded-xl">
+                                    <div class="text-[11px] font-bold text-slate-500 mb-2 flex items-center justify-between">
+                                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-image text-indigo-500"></i> Ejercicio / Captura Guía:</span>
+                                        <a href="{{ asset('storage/' . $assignment->guide_file) }}" target="_blank" class="text-indigo-600 hover:underline text-[11px] font-semibold">
+                                            Abrir en grande <i class="fa-solid fa-arrow-up-right-from-square text-[9px] ml-0.5"></i>
+                                        </a>
+                                    </div>
+                                    <a href="{{ asset('storage/' . $assignment->guide_file) }}" target="_blank" class="block overflow-hidden rounded-lg border border-slate-200 hover:border-indigo-400 transition-all bg-white shadow-xs group/img">
+                                        <img src="{{ asset('storage/' . $assignment->guide_file) }}" alt="{{ $assignment->title }}" class="w-full max-h-44 object-contain p-1 group-hover/img:scale-102 transition-transform">
+                                    </a>
+                                </div>
+                            @endif
                         </div>
 
                         @if(auth()->user()->isStudent())
                             <div class="mt-4 pt-3 border-t border-slate-100 flex justify-end">
-                                <button @click="selectedSubject = {{ $subject->id }}; uploadModal = true" class="px-4 py-2 rounded-xl {{ $isMath ? 'bg-indigo-600 hover:bg-indigo-700' : 'bg-emerald-600 hover:bg-emerald-700' }} text-white font-bold text-xs shadow-md transition-all">
+                                <button @click="selectedSubject = {{ $subject->id }}; selectedAssignment = {{ $assignment->id }}; assignmentTitle = '{{ addslashes($assignment->title) }}'; uploadModal = true" class="px-4 py-2 rounded-xl {{ $isMath ? 'bg-indigo-600 hover:bg-indigo-700' : 'bg-emerald-600 hover:bg-emerald-700' }} text-white font-bold text-xs shadow-md transition-all">
                                     <i class="fa-solid fa-upload mr-1"></i> Entregar Deber
                                 </button>
                             </div>
