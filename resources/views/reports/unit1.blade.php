@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informe de Deberes Entregados - Unidad 1 | Emmanuel</title>
+    <title>Informe de Deberes - Unidad 1 | Emmanuel</title>
     
     <!-- Metatags para Compartir en WhatsApp -->
-    <meta property="og:title" content="Informe de Deberes Entregados - Unidad 1 | Emmanuel">
-    <meta property="og:description" content="Reporte de deberes y proyectos entregados en Matemática y Computación. Tutor: Prof. Carlos Angulo.">
+    <meta property="og:title" content="Informe de Deberes - Unidad 1 | Emmanuel">
+    <meta property="og:description" content="Reporte de deberes y temas impartidos en Matemática y Computación. Tutor: Prof. Carlos Angulo.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ url('/informe/unidad-1') }}">
     
@@ -87,7 +87,7 @@
                 </a>
                 <div>
                     <h1 class="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Deberes Emmanuel</h1>
-                    <p class="text-[11px] text-slate-500 font-medium">Informe de Deberes Entregados &bull; Unidad 1</p>
+                    <p class="text-[11px] text-slate-500 font-medium">Informe de Avance &bull; Unidad 1</p>
                 </div>
             </div>
 
@@ -99,7 +99,7 @@
                 </button>
 
                 <!-- Botón de Compartir en WhatsApp -->
-                <a href="https://api.whatsapp.com/send?text={{ urlencode('📋 Informe de Deberes Entregados de Emmanuel (Unidad 1): ' . url('/informe/unidad-1')) }}" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs transition-all active:scale-95">
+                <a href="https://api.whatsapp.com/send?text={{ urlencode('📋 Informe de Deberes de Emmanuel (Unidad 1): ' . url('/informe/unidad-1')) }}" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs transition-all active:scale-95">
                     <i class="fa-brands fa-whatsapp text-sm"></i>
                     <span>Compartir</span>
                 </a>
@@ -119,57 +119,40 @@
 
     <!-- DOCUMENTO PRINCIPAL -->
     <main class="max-w-5xl mx-auto px-4 sm:px-6">
-        <div class="print-card bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-8 space-y-6">
+        <div class="print-card bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-6 space-y-5">
             
-            <!-- ENCABEZADO RESUMIDO -->
-            <div class="border-b border-slate-200 pb-4">
-                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
-                    <div>
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="text-[10px] font-extrabold uppercase tracking-widest text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
-                                SISTEMA EDUCATIVO NOXDATA
-                            </span>
-                            <span class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                                OFICIAL
-                            </span>
-                        </div>
-                        <h2 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">
-                            INFORME DE DEBERES ENTREGADOS — UNIDAD 1
-                        </h2>
-                        <p class="text-xs text-slate-500 mt-0.5">
-                            Registro de actividades prácticas, talleres y proyectos completados
-                        </p>
+            <!-- TARJETITA SENCILLA DE CABECERA (SOLICITADA POR CARLOS) -->
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3.5 sm:p-4 flex flex-wrap items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold text-base shrink-0">
+                        <i class="fa-solid fa-graduation-cap"></i>
                     </div>
-
-                    <div class="text-left sm:text-right text-xs">
-                        <span class="text-slate-400 font-semibold block text-[11px]">Fecha de Emisión:</span>
-                        <span class="font-bold text-slate-900">Noviembre de 2026</span>
+                    <div>
+                        <div class="flex items-center gap-2 mb-0.5">
+                            <span class="text-[10px] font-extrabold uppercase tracking-wider text-slate-600 bg-white px-2 py-0.5 rounded border border-slate-200">
+                                Unidad 1
+                            </span>
+                            <span class="text-xs text-slate-400 font-medium">Noviembre 2026</span>
+                        </div>
+                        <h2 class="text-sm sm:text-base font-black text-slate-900 tracking-tight">
+                            Informe de Deberes — {{ $student->name ?? 'Emmanuel' }}
+                        </h2>
+                        <p class="text-[11px] text-slate-500">
+                            Tutor: <strong class="text-slate-800">{{ $teacher->name ?? 'Prof. Carlos Angulo' }}</strong>
+                        </p>
                     </div>
                 </div>
 
-                <!-- FICHA DE DATOS COMPACTA -->
-                <div class="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                    <div>
-                        <span class="text-[10px] font-bold text-slate-400 uppercase block">Estudiante</span>
-                        <span class="font-extrabold text-slate-900">{{ $student->name ?? 'Emmanuel' }}</span>
-                    </div>
-                    <div>
-                        <span class="text-[10px] font-bold text-slate-400 uppercase block">Tutor Docente</span>
-                        <span class="font-extrabold text-slate-900">{{ $teacher->name ?? 'Prof. Carlos Angulo' }}</span>
-                    </div>
-                    <div>
-                        <span class="text-[10px] font-bold text-slate-400 uppercase block">Ciclo Evaluado</span>
-                        <span class="font-extrabold text-slate-900">Unidad 1</span>
-                    </div>
-                    <div>
-                        <span class="text-[10px] font-bold text-slate-400 uppercase block">Calificación</span>
-                        <span class="font-extrabold text-emerald-700">10.0 / 10 ⭐</span>
-                    </div>
+                <div class="flex items-center gap-2">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-black">
+                        <i class="fa-solid fa-star text-amber-500 text-xs"></i>
+                        <span>Calificación: 10.0 / 10</span>
+                    </span>
                 </div>
             </div>
 
             <!-- CONTENEDOR DE LAS 2 TABLAS LADO A LADO -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 print:grid-cols-2 print:gap-4 print-grid items-start avoid-break">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 print:grid-cols-2 print:gap-4 print-grid items-start avoid-break">
                 
                 <!-- TABLA 1: MATEMÁTICA -->
                 <div class="space-y-2">
@@ -179,7 +162,7 @@
                             <span>1. Matemática</span>
                         </h3>
                         <span class="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200">
-                            {{ count($mathDuties) }} Entregas
+                            {{ count($mathDuties) }} Temas / Deberes
                         </span>
                     </div>
 
@@ -187,7 +170,7 @@
                         <table class="w-full text-left text-xs divide-y divide-slate-200">
                             <thead class="bg-slate-50 text-slate-600 font-bold text-[11px]">
                                 <tr>
-                                    <th class="py-2 px-3">Deber</th>
+                                    <th class="py-2 px-3">Tema / Deber</th>
                                     <th class="py-2 px-3">Detalle</th>
                                     <th class="py-2 px-3 text-center">Estado</th>
                                 </tr>
@@ -195,7 +178,7 @@
                             <tbody class="divide-y divide-slate-100 bg-white text-[11px]">
                                 @foreach($mathDuties as $duty)
                                     <tr class="hover:bg-slate-50/50 transition-colors">
-                                        <td class="py-2.5 px-3 font-bold text-slate-900">
+                                        <td class="py-2 px-3 font-bold text-slate-900">
                                             <div>{{ $duty['title'] }}</div>
                                             @if(!empty($duty['guide_url']))
                                                 <a href="{{ $duty['guide_url'] }}" target="_blank" class="no-print text-[10px] text-indigo-600 hover:underline font-semibold inline-flex items-center gap-0.5 mt-0.5">
@@ -204,10 +187,10 @@
                                                 </a>
                                             @endif
                                         </td>
-                                        <td class="py-2.5 px-3 text-slate-600 text-[11px]">
+                                        <td class="py-2 px-3 text-slate-600 text-[11px]">
                                             {{ $duty['detail'] }}
                                         </td>
-                                        <td class="py-2.5 px-3 text-center whitespace-nowrap">
+                                        <td class="py-2 px-3 text-center whitespace-nowrap">
                                             <span class="inline-flex items-center gap-1 font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 text-[10px]">
                                                 <i class="fa-solid fa-circle-check text-[9px]"></i>
                                                 <span>{{ $duty['status'] }}</span>
@@ -228,7 +211,7 @@
                             <span>2. Computación</span>
                         </h3>
                         <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                            {{ count($compuDuties) }} Entregas
+                            {{ count($compuDuties) }} Temas / Proyectos
                         </span>
                     </div>
 
@@ -236,7 +219,7 @@
                         <table class="w-full text-left text-xs divide-y divide-slate-200">
                             <thead class="bg-slate-50 text-slate-600 font-bold text-[11px]">
                                 <tr>
-                                    <th class="py-2 px-3">Deber / Proyecto</th>
+                                    <th class="py-2 px-3">Tema / Proyecto</th>
                                     <th class="py-2 px-3">Detalle</th>
                                     <th class="py-2 px-3 text-center">Nota</th>
                                 </tr>
@@ -244,7 +227,7 @@
                             <tbody class="divide-y divide-slate-100 bg-white text-[11px]">
                                 @foreach($compuDuties as $duty)
                                     <tr class="hover:bg-slate-50/50 transition-colors">
-                                        <td class="py-2.5 px-3 font-bold text-slate-900">
+                                        <td class="py-2 px-3 font-bold text-slate-900">
                                             <div>{{ $duty['title'] }}</div>
                                             @if(!empty($duty['link_url']))
                                                 <a href="{{ $duty['link_url'] }}" target="_blank" class="no-print text-[10px] text-emerald-700 hover:text-emerald-900 hover:underline font-bold inline-flex items-center gap-0.5 mt-0.5">
@@ -253,10 +236,10 @@
                                                 </a>
                                             @endif
                                         </td>
-                                        <td class="py-2.5 px-3 text-slate-600 text-[11px]">
+                                        <td class="py-2 px-3 text-slate-600 text-[11px]">
                                             {{ $duty['detail'] }}
                                         </td>
-                                        <td class="py-2.5 px-3 text-center whitespace-nowrap">
+                                        <td class="py-2 px-3 text-center whitespace-nowrap">
                                             <span class="inline-flex items-center gap-1 font-extrabold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 text-[10px]">
                                                 <i class="fa-solid fa-star text-[9px] text-amber-500"></i>
                                                 <span>{{ $duty['grade'] }}</span>
@@ -271,34 +254,10 @@
 
             </div>
 
-            <!-- FIRMAS FORMALES MINIMALISTAS -->
-            <div class="pt-5 border-t border-slate-200 avoid-break">
-                <div class="grid grid-cols-2 gap-8 text-center pt-2">
-                    <div>
-                        <div class="h-10 flex items-end justify-center mb-1">
-                            <span class="font-serif italic text-sm text-slate-900 tracking-wider">Carlos Angulo</span>
-                        </div>
-                        <div class="border-t border-slate-300 w-44 mx-auto pt-1">
-                            <p class="text-xs font-bold text-slate-900">{{ $teacher->name ?? 'Prof. Carlos Angulo' }}</p>
-                            <p class="text-[10px] text-slate-400 font-medium">Tutor Académico</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="h-10 flex items-end justify-center mb-1">
-                            <span class="text-slate-300 text-xs italic">Firma de conformidad</span>
-                        </div>
-                        <div class="border-t border-slate-300 w-44 mx-auto pt-1">
-                            <p class="text-xs font-bold text-slate-900">Firma del Representante</p>
-                            <p class="text-[10px] text-slate-400 font-medium">Padre / Madre de Familia</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-4 text-center text-[10px] text-slate-400">
-                    Plataforma <strong class="text-slate-600">Deberes Emmanuel</strong> &bull; Verificable en línea en: 
-                    <a href="{{ url('/informe/unidad-1') }}" class="text-slate-700 underline font-semibold">{{ url('/informe/unidad-1') }}</a>
-                </div>
+            <!-- ENLACE DE AUDITORÍA DISCRETO (SIN FIRMAS FORMALES) -->
+            <div class="pt-3 border-t border-slate-100 text-center text-[10px] text-slate-400 avoid-break">
+                Plataforma <strong class="text-slate-600">Deberes Emmanuel</strong> &bull; Verificable en: 
+                <a href="{{ url('/informe/unidad-1') }}" class="text-slate-700 underline font-semibold">{{ url('/informe/unidad-1') }}</a>
             </div>
 
         </div>

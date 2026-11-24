@@ -278,26 +278,40 @@ class DashboardController extends Controller
             'email' => 'carlos@deberesem.noxdata.site',
         ];
 
-        // Deberes entregados de Matemática (concisos y claros)
+        // Deberes y temas impartidos de Matemática (concisos y claros)
         $mathDuties = [
             [
-                'title' => 'División Larga',
-                'detail' => '28.851 ÷ 88 (Cuaderno)',
+                'title' => 'Refuerzo de Operaciones Básicas',
+                'detail' => 'Cálculo aritmético, tablas y agilidad mental',
+                'guide_url' => null,
+                'status' => 'Entregado',
+                'grade' => '10 / 10',
+            ],
+            [
+                'title' => 'División Larga (2 cifras)',
+                'detail' => '28.851 ÷ 88 y 5.932 ÷ 13 en cuaderno',
                 'guide_url' => asset('storage/guides/guia_division_28851_88.jpg'),
                 'status' => 'Entregado',
                 'grade' => '10 / 10',
             ],
             [
-                'title' => 'División en Cuadrícula',
-                'detail' => '5.932 ÷ 13 (Cuaderno)',
-                'guide_url' => asset('storage/guides/guia_division_5932_13.jpg'),
+                'title' => 'Estimación y Redondeo',
+                'detail' => 'Taller de 7 operaciones de aproximación',
+                'guide_url' => asset('storage/guides/guia_estimaciones_redondeo.jpg'),
                 'status' => 'Entregado',
                 'grade' => '10 / 10',
             ],
             [
-                'title' => 'Taller de Estimación',
-                'detail' => 'Redondeo y aproximaciones',
-                'guide_url' => asset('storage/guides/guia_estimaciones_redondeo.jpg'),
+                'title' => 'Números Enteros (Z)',
+                'detail' => 'Recta numérica, concepto de opuestos y orden',
+                'guide_url' => null,
+                'status' => 'Entregado',
+                'grade' => '10 / 10',
+            ],
+            [
+                'title' => 'Fracciones (Q)',
+                'detail' => 'Concepto parte-todo, simplificación y equivalencias',
+                'guide_url' => null,
                 'status' => 'Entregado',
                 'grade' => '10 / 10',
             ],
