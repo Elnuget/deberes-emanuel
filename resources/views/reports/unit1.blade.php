@@ -1,44 +1,277 @@
-<!DOCTYPE html>
-<html lang="es" class="h-full bg-slate-100/70">
+﻿<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matriz Curricular — Objetivos Unidad 1 | Emanuel</title>
+    <title>Matriz Curricular — Objetivos Unidad 1 | Emmanuel</title>
     
     <!-- Metatags para Compartir -->
-    <meta property="og:title" content="Matriz Curricular — Objetivos Unidad 1 | Emanuel">
+    <meta property="og:title" content="Matriz Curricular — Objetivos Unidad 1 | Emmanuel">
     <meta property="og:description" content="Matriz formal de objetivos consolidados y relación transversal entre Matemática y Computación.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ url('/informe/unidad-1') }}">
     
-    <!-- Fuentes Tipográficas Formales: Merriweather + Inter -->
+    <!-- Fuentes Tipográficas Formales -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['"Merriweather"', 'serif'],
-                        sans: ['"Inter"', 'sans-serif'],
-                    }
-                }
+    <!-- ESTILOS FORMALES 100% AUTOCONTENIDOS (Garantía de Carga Inmediata y Resiliencia Total) -->
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            min-height: 100%;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            padding: 1.25rem 0.75rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        @media (min-width: 640px) {
+            body {
+                padding: 2.5rem 1.5rem;
             }
         }
-    </script>
 
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            color: #1e293b;
+        .doc-container {
+            width: 100%;
+            max-width: 56rem;
+            margin: 0 auto;
         }
 
-        .font-document-title {
-            font-family: 'Merriweather', serif;
+        .doc-sheet {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .doc-sheet {
+                padding: 2.5rem 3rem;
+                border-radius: 1rem;
+            }
+        }
+
+        /* Encabezado */
+        .doc-header {
+            border-bottom: 2px solid #0f172a;
+            padding-bottom: 1.25rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .doc-header-top {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-bottom: 0.65rem;
+        }
+
+        @media (min-width: 640px) {
+            .doc-header-top {
+                flex-direction: row;
+                align-items: flex-end;
+            }
+        }
+
+        .doc-tag {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #0f172a;
+        }
+
+        .doc-title {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+        }
+
+        @media (min-width: 640px) {
+            .doc-title {
+                font-size: 1.75rem;
+            }
+        }
+
+        .doc-subtitle {
+            font-size: 0.8125rem;
+            color: #475569;
+            margin-top: 0.35rem;
+            line-height: 1.45;
+        }
+
+        /* Secciones */
+        .doc-section {
+            margin-bottom: 1.75rem;
+        }
+
+        .doc-section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.65rem;
+        }
+
+        .doc-section-title {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        @media (min-width: 640px) {
+            .doc-section-title {
+                font-size: 1.05rem;
+            }
+        }
+
+        .doc-section-badge {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+        }
+
+        /* Tablas */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            background: #ffffff;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .formal-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.75rem;
+            min-width: 600px;
+        }
+
+        .formal-table th {
+            background-color: #f8fafc;
+            color: #334155;
+            font-weight: 700;
+            padding: 0.65rem 0.85rem;
+            border-bottom: 1px solid #e2e8f0;
+            text-transform: uppercase;
+            font-size: 0.6875rem;
+            letter-spacing: 0.05em;
+        }
+
+        .formal-table td {
+            padding: 0.65rem 0.85rem;
+            border-bottom: 1px solid #f1f5f9;
+            color: #475569;
+            vertical-align: top;
+            line-height: 1.45;
+        }
+
+        .formal-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .formal-table tbody tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .item-desc {
+            color: #334155;
+        }
+
+        .item-link-u2 {
+            color: #475569;
+        }
+
+        .item-highlight {
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        /* Badges de Estado */
+        .badge-status {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            background-color: #ecfdf5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+            white-space: nowrap;
+        }
+
+        .badge-grade {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            border: 1px solid #cbd5e1;
+            white-space: nowrap;
+        }
+
+        .cell-center {
+            text-align: center;
+        }
+
+        .symbol-connector {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Pie de documento */
+        .doc-footer {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 0.85rem;
+            margin-top: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 0.35rem;
+            font-size: 0.6875rem;
+            color: #64748b;
+        }
+
+        @media (min-width: 640px) {
+            .doc-footer {
+                flex-direction: row;
+                align-items: center;
+            }
         }
 
         @media print {
@@ -46,141 +279,131 @@
                 background: #ffffff !important;
                 padding: 0 !important;
             }
-            .document-sheet {
+            .doc-sheet {
                 box-shadow: none !important;
                 border: none !important;
-                max-width: 100% !important;
                 padding: 0 !important;
-                margin: 0 !important;
+            }
+            .formal-table {
+                min-width: 100% !important;
             }
         }
     </style>
 </head>
-<body class="min-h-full py-4 sm:py-8 px-2.5 sm:px-6 lg:px-8 antialiased text-slate-800 flex justify-center">
+<body>
 
-    <!-- HOJA FORMAL DEL DOCUMENTO -->
-    <main class="w-full max-w-4xl">
-        <article class="document-sheet bg-white rounded-lg sm:rounded-xl border border-slate-300 shadow-sm p-4 sm:p-8 md:p-10 space-y-6 sm:space-y-7">
+    <main class="doc-container">
+        <article class="doc-sheet">
             
             <!-- ENCABEZADO INSTITUCIONAL FORMAL -->
-            <header class="border-b-2 border-slate-900 pb-4">
-                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 text-xs text-slate-600 mb-2">
+            <header class="doc-header">
+                <div class="doc-header-top">
                     <div>
-                        <span class="font-bold uppercase tracking-wider text-slate-900">Informe Pedagógico de Cierre</span>
-                        <span class="block text-[11px] text-slate-500">Ciclo Evaluado: Unidad 1</span>
+                        <span class="doc-tag">Informe Pedagógico de Cierre</span>
+                        <div style="font-size: 0.6875rem; color: #64748b; margin-top: 0.15rem;">Ciclo Evaluado: Unidad 1</div>
                     </div>
-                    <div class="sm:text-right">
-                        <span class="text-slate-500 block text-[11px]">Estudiante evaluado:</span>
-                        <strong class="text-slate-900 text-sm font-semibold">{{ $student->name ?? 'Emanuel' }}</strong>
+                    <div style="font-size: 0.75rem;">
+                        <span style="color: #64748b;">Estudiante evaluado:</span>
+                        <strong style="color: #0f172a; margin-left: 0.25rem;">{{ $student->name ?? 'Emmanuel' }}</strong>
                     </div>
                 </div>
 
-                <h1 class="font-document-title text-xl sm:text-2xl font-bold text-slate-900 tracking-tight leading-snug">
+                <h1 class="doc-title">
                     Matriz Curricular de Objetivos y Relación Transversal
                 </h1>
-                <p class="text-xs text-slate-600 mt-1">
+                <p class="doc-subtitle">
                     Resumen esquemático de competencias adquiridas en <strong>Matemática</strong> y <strong>Computación</strong>, facilitando su revisión pedagógica y articulación hacia la Unidad 2.
                 </p>
             </header>
 
             <!-- TABLA 1: MATEMÁTICA -->
-            <section class="space-y-2.5">
-                <div class="flex items-center justify-between">
-                    <h2 class="font-document-title text-sm sm:text-base font-bold text-slate-900">
+            <section class="doc-section">
+                <div class="doc-section-header">
+                    <h2 class="doc-section-title">
                         Tabla 1. Objetivos Consolidados en Matemática
                     </h2>
-                    <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Cimientos Numéricos</span>
+                    <span class="doc-section-badge">Cimientos Numéricos</span>
                 </div>
 
-                <div class="overflow-x-auto rounded-lg border border-slate-200">
-                    <table class="w-full text-left text-xs divide-y divide-slate-200">
-                        <thead class="bg-slate-50 text-slate-700 font-semibold text-[11px]">
+                <div class="table-responsive">
+                    <table class="formal-table">
+                        <thead>
                             <tr>
-                                <th class="py-2.5 px-3 w-1/4">Tema / Contenido</th>
-                                <th class="py-2.5 px-3">Destreza Alcanzada (Poco texto)</th>
-                                <th class="py-2.5 px-3 w-1/3">Importancia y Conexión (U2 / Lógica)</th>
-                                <th class="py-2.5 px-3 text-center w-24">Estado</th>
+                                <th style="width: 26%;">Tema / Contenido</th>
+                                <th style="width: 34%;">Destreza Alcanzada (Poco texto)</th>
+                                <th style="width: 28%;">Importancia y Conexión (U2 / Lógica)</th>
+                                <th style="width: 12%; text-align: center;">Estado</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-slate-100 bg-white text-[11px] leading-relaxed">
-                            <tr class="hover:bg-slate-50/50">
-                                <td class="py-2.5 px-3 font-semibold text-slate-900">
+                        <tbody>
+                            <tr>
+                                <td class="item-name">
                                     1. Jerarquía de Operaciones (ℕ)
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-700">
+                                <td class="item-desc">
                                     Resolución metódica con paréntesis, productos y sumas sin salirse del orden.
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-600">
+                                <td class="item-link-u2">
                                     Base obligatoria para ecuaciones y pensamiento secuencial algorítmico.
                                 </td>
-                                <td class="py-2.5 px-3 text-center whitespace-nowrap">
-                                    <span class="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                                        Consolidado
-                                    </span>
+                                <td class="cell-center">
+                                    <span class="badge-status">Consolidado</span>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-50/50">
-                                <td class="py-2.5 px-3 font-semibold text-slate-900">
+                            <tr>
+                                <td class="item-name">
                                     2. Recta Numérica y Opuestos (ℤ)
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-700">
+                                <td class="item-desc">
                                     Ubicación espacial de positivos, negativos y distancias respecto al origen (0).
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-600">
+                                <td class="item-link-u2">
                                     Introduce el sentido relativo de magnitud (temperatura, balance y ejes).
                                 </td>
-                                <td class="py-2.5 px-3 text-center whitespace-nowrap">
-                                    <span class="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                                        Consolidado
-                                    </span>
+                                <td class="cell-center">
+                                    <span class="badge-status">Consolidado</span>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-50/50">
-                                <td class="py-2.5 px-3 font-semibold text-slate-900">
+                            <tr>
+                                <td class="item-name">
                                     3. Fracciones y Equivalencias (ℚ)
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-700">
+                                <td class="item-desc">
                                     Concepto parte-todo, simplificación rigurosa e identificación de razones iguales.
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-600 font-medium text-slate-800">
-                                    <strong>Puente directo a la U2:</strong> una fracción es la antesala formal del número decimal.
+                                <td class="item-link-u2">
+                                    <span class="item-highlight">Puente directo a la U2:</span> una fracción es la antesala formal del número decimal.
                                 </td>
-                                <td class="py-2.5 px-3 text-center whitespace-nowrap">
-                                    <span class="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                                        Consolidado
-                                    </span>
+                                <td class="cell-center">
+                                    <span class="badge-status">Consolidado</span>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-50/50">
-                                <td class="py-2.5 px-3 font-semibold text-slate-900">
+                            <tr>
+                                <td class="item-name">
                                     4. División de Dos Cifras
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-700">
+                                <td class="item-desc">
                                     Proceso largo mecánico, estimación de cociente y control estricto del residuo.
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-600">
+                                <td class="item-link-u2">
                                     Desarrolla orden en cuadrícula y prepara la división con coma decimal.
                                 </td>
-                                <td class="py-2.5 px-3 text-center whitespace-nowrap">
-                                    <span class="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                                        Consolidado
-                                    </span>
+                                <td class="cell-center">
+                                    <span class="badge-status">Consolidado</span>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-50/50">
-                                <td class="py-2.5 px-3 font-semibold text-slate-900">
+                            <tr>
+                                <td class="item-name">
                                     5. Estimación y Redondeo
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-700">
+                                <td class="item-desc">
                                     Aproximación mental rápida de resultados sin uso de calculadora.
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-600">
+                                <td class="item-link-u2">
                                     Criterio crítico de auto-auditoría para descartar errores ilógicos por descuido.
                                 </td>
-                                <td class="py-2.5 px-3 text-center whitespace-nowrap">
-                                    <span class="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                                        Consolidado
-                                    </span>
+                                <td class="cell-center">
+                                    <span class="badge-status">Consolidado</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -189,103 +412,93 @@
             </section>
 
             <!-- TABLA 2: COMPUTACIÓN -->
-            <section class="space-y-2.5 pt-2">
-                <div class="flex items-center justify-between">
-                    <h2 class="font-document-title text-sm sm:text-base font-bold text-slate-900">
+            <section class="doc-section">
+                <div class="doc-section-header">
+                    <h2 class="doc-section-title">
                         Tabla 2. Objetivos Consolidados en Computación
                     </h2>
-                    <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Maquetación Web</span>
+                    <span class="doc-section-badge">Maquetación Web</span>
                 </div>
 
-                <div class="overflow-x-auto rounded-lg border border-slate-200">
-                    <table class="w-full text-left text-xs divide-y divide-slate-200">
-                        <thead class="bg-slate-50 text-slate-700 font-semibold text-[11px]">
+                <div class="table-responsive">
+                    <table class="formal-table">
+                        <thead>
                             <tr>
-                                <th class="py-2.5 px-3 w-1/4">Proyecto / Destreza</th>
-                                <th class="py-2.5 px-3">Destreza Alcanzada (Poco texto)</th>
-                                <th class="py-2.5 px-3 w-1/3">Importancia y Conexión (U2 / Lógica)</th>
-                                <th class="py-2.5 px-3 text-center w-24">Evaluación</th>
+                                <th style="width: 26%;">Proyecto / Destreza</th>
+                                <th style="width: 34%;">Destreza Alcanzada (Poco texto)</th>
+                                <th style="width: 28%;">Importancia y Conexión (U2 / Lógica)</th>
+                                <th style="width: 12%; text-align: center;">Evaluación</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-slate-100 bg-white text-[11px] leading-relaxed">
-                            <tr class="hover:bg-slate-50/50">
-                                <td class="py-2.5 px-3 font-semibold text-slate-900">
+                        <tbody>
+                            <tr>
+                                <td class="item-name">
                                     1. Estructura HTML5 Semántica
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-700">
+                                <td class="item-desc">
                                     Maquetación de encabezados (&lt;h1&gt;-&lt;h6&gt;), párrafos y bloques estándar.
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-600">
+                                <td class="item-link-u2">
                                     Análogo al orden matemático: código estricto sin etiquetas rotas ni abiertas.
                                 </td>
-                                <td class="py-2.5 px-3 text-center whitespace-nowrap">
-                                    <span class="text-[10px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
-                                        10.0 / 10
-                                    </span>
+                                <td class="cell-center">
+                                    <span class="badge-grade">10.0 / 10</span>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-50/50">
-                                <td class="py-2.5 px-3 font-semibold text-slate-900">
+                            <tr>
+                                <td class="item-name">
                                     2. Hipervínculos e Interconexión
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-700">
+                                <td class="item-desc">
                                     Rutas relativas y absolutas para navegar entre múltiples páginas web.
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-600">
+                                <td class="item-link-u2">
                                     Conecta elementos aislados en un sistema funcional navegable.
                                 </td>
-                                <td class="py-2.5 px-3 text-center whitespace-nowrap">
-                                    <span class="text-[10px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
-                                        10.0 / 10
-                                    </span>
+                                <td class="cell-center">
+                                    <span class="badge-grade">10.0 / 10</span>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-50/50">
-                                <td class="py-2.5 px-3 font-semibold text-slate-900">
+                            <tr>
+                                <td class="item-name">
                                     3. Tablas de Información
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-700">
+                                <td class="item-desc">
                                     Modelado simétrico de filas (&lt;tr&gt;) y columnas (&lt;td&gt;) en horario escolar.
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-600">
+                                <td class="item-link-u2">
                                     Correspondencia directa con la cuadrícula espacial de la división matemática.
                                 </td>
-                                <td class="py-2.5 px-3 text-center whitespace-nowrap">
-                                    <span class="text-[10px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
-                                        10.0 / 10
-                                    </span>
+                                <td class="cell-center">
+                                    <span class="badge-grade">10.0 / 10</span>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-50/50">
-                                <td class="py-2.5 px-3 font-semibold text-slate-900">
+                            <tr>
+                                <td class="item-name">
                                     4. Publicación en GitHub Pages
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-700">
+                                <td class="item-desc">
                                     Despliegue autónomo de proyectos web en servidores reales de internet.
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-600 font-medium text-slate-800">
-                                    Lleva la teoría a un resultado verificable en línea, fomentando autonomía.
+                                <td class="item-link-u2">
+                                    <span class="item-highlight">Lleva la teoría a un resultado verificable</span> en línea, fomentando autonomía.
                                 </td>
-                                <td class="py-2.5 px-3 text-center whitespace-nowrap">
-                                    <span class="text-[10px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
-                                        10.0 / 10
-                                    </span>
+                                <td class="cell-center">
+                                    <span class="badge-grade">10.0 / 10</span>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-50/50">
-                                <td class="py-2.5 px-3 font-semibold text-slate-900">
+                            <tr>
+                                <td class="item-name">
                                     5. Calidad y Eficacia de Entrega
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-700">
+                                <td class="item-desc">
                                     100% de proyectos evaluados con retroalimentación docente superada.
                                 </td>
-                                <td class="py-2.5 px-3 text-slate-600">
+                                <td class="item-link-u2">
                                     Cierra la maquetación HTML5 y deja la estructura lista para hojas CSS (U2).
                                 </td>
-                                <td class="py-2.5 px-3 text-center whitespace-nowrap">
-                                    <span class="text-[10px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
-                                        10.0 / 10
-                                    </span>
+                                <td class="cell-center">
+                                    <span class="badge-grade">10.0 / 10</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -293,93 +506,93 @@
                 </div>
             </section>
 
-            <!-- ESQUEMA GRÁFICO DE ARTICULACIÓN 1 A 1 -->
-            <section class="space-y-2.5 pt-2">
-                <div class="flex items-center justify-between">
-                    <h2 class="font-document-title text-sm sm:text-base font-bold text-slate-900">
+            <!-- TABLA 3: MATRIZ DE CORRESPONDENCIA TRANSVERSAL -->
+            <section class="doc-section" style="margin-bottom: 0;">
+                <div class="doc-section-header">
+                    <h2 class="doc-section-title">
                         Tabla 3. Matriz de Correspondencia Transversal (Matemática ⟷ Computación)
                     </h2>
-                    <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Sinergia Directa</span>
+                    <span class="doc-section-badge">Sinergia Directa</span>
                 </div>
 
-                <div class="overflow-x-auto rounded-lg border border-slate-200">
-                    <table class="w-full text-left text-xs divide-y divide-slate-200">
-                        <thead class="bg-slate-100/80 text-slate-700 font-semibold text-[11px]">
-                            <tr>
-                                <th class="py-2 px-3 w-1/3">Eje Matemático (Lógica)</th>
-                                <th class="py-2 px-2 text-center w-12 text-slate-400">Vínculo</th>
-                                <th class="py-2 px-3 w-1/3">Eje Computacional (Aplicación)</th>
-                                <th class="py-2 px-3">Relación Formativa Integrada</th>
+                <div class="table-responsive">
+                    <table class="formal-table">
+                        <thead>
+                            <tr style="background-color: #f1f5f9;">
+                                <th style="width: 30%;">Eje Matemático (Lógica)</th>
+                                <th style="width: 8%; text-align: center;">Vínculo</th>
+                                <th style="width: 30%;">Eje Computacional (Aplicación)</th>
+                                <th style="width: 32%;">Relación Formativa Integrada</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-slate-100 bg-white text-[11px]">
-                            <tr class="hover:bg-slate-50/50">
-                                <td class="py-2 px-3 font-semibold text-slate-900">
+                        <tbody>
+                            <tr>
+                                <td class="item-name">
                                     Jerarquía de Operaciones
                                 </td>
-                                <td class="py-2 px-2 text-center text-slate-400 font-bold">
+                                <td class="symbol-connector">
                                     ⇄
                                 </td>
-                                <td class="py-2 px-3 font-semibold text-slate-900">
+                                <td class="item-name">
                                     Estructura Semántica HTML
                                 </td>
-                                <td class="py-2 px-3 text-slate-600">
+                                <td class="item-desc">
                                     Ambos exigen orden secuencial estricto sin ambigüedades.
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-50/50">
-                                <td class="py-2 px-3 font-semibold text-slate-900">
+                            <tr>
+                                <td class="item-name">
                                     Recta Numérica y Opuestos
                                 </td>
-                                <td class="py-2 px-2 text-center text-slate-400 font-bold">
+                                <td class="symbol-connector">
                                     ⇄
                                 </td>
-                                <td class="py-2 px-3 font-semibold text-slate-900">
+                                <td class="item-name">
                                     Rutas e Hipervínculos
                                 </td>
-                                <td class="py-2 px-3 text-slate-600">
+                                <td class="item-desc">
                                     Comprensión de posición relativa y direccionamiento ordenado.
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-50/50">
-                                <td class="py-2 px-3 font-semibold text-slate-900">
+                            <tr>
+                                <td class="item-name">
                                     Fracciones y Equivalencias
                                 </td>
-                                <td class="py-2 px-2 text-center text-slate-400 font-bold">
+                                <td class="symbol-connector">
                                     ⇄
                                 </td>
-                                <td class="py-2 px-3 font-semibold text-slate-900">
+                                <td class="item-name">
                                     Proporciones y Modelo Web
                                 </td>
-                                <td class="py-2 px-3 text-slate-600">
+                                <td class="item-desc">
                                     Noción de partes; cimiento clave para Decimales y estilos CSS (U2).
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-50/50">
-                                <td class="py-2 px-3 font-semibold text-slate-900">
+                            <tr>
+                                <td class="item-name">
                                     División en Cuadrícula
                                 </td>
-                                <td class="py-2 px-2 text-center text-slate-400 font-bold">
+                                <td class="symbol-connector">
                                     ⇄
                                 </td>
-                                <td class="py-2 px-3 font-semibold text-slate-900">
+                                <td class="item-name">
                                     Tablas y Horario HTML
                                 </td>
-                                <td class="py-2 px-3 text-slate-600">
+                                <td class="item-desc">
                                     Organización espacial rigurosa de datos en filas y columnas.
                                 </td>
                             </tr>
-                            <tr class="hover:bg-slate-50/50">
-                                <td class="py-2 px-3 font-semibold text-slate-900">
+                            <tr>
+                                <td class="item-name">
                                     Estimación y Redondeo
                                 </td>
-                                <td class="py-2 px-2 text-center text-slate-400 font-bold">
+                                <td class="symbol-connector">
                                     ⇄
                                 </td>
-                                <td class="py-2 px-3 font-semibold text-slate-900">
+                                <td class="item-name">
                                     Publicación en GitHub Pages
                                 </td>
-                                <td class="py-2 px-3 text-slate-600">
+                                <td class="item-desc">
                                     Criterio crítico de auto-revisión antes de dar por buena la entrega.
                                 </td>
                             </tr>
@@ -389,9 +602,9 @@
             </section>
 
             <!-- PIE DE HOJA FORMAL -->
-            <footer class="pt-3 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-1 text-[11px] text-slate-500">
-                <span>Informe académico oficial de competencias • Cierre de la Unidad 1</span>
-                <span class="font-medium text-slate-700">Listo para inicio de la Unidad 2</span>
+            <footer class="doc-footer">
+                <div>Informe académico oficial de competencias &bull; Cierre de la Unidad 1</div>
+                <div style="font-weight: 600; color: #334155;">Estudiante: Emmanuel &bull; Listo para Unidad 2</div>
             </footer>
 
         </article>

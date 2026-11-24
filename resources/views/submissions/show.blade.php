@@ -1,6 +1,6 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
-@section('title', $submission->title . ' - Deberes Emanuel')
+@section('title', $submission->title . ' - Deberes Emmanuel')
 
 @section('content')
 @php
@@ -67,7 +67,7 @@
 
         @if($submission->student_notes)
             <div class="mt-5 p-4 rounded-2xl bg-slate-50 border border-slate-100 text-sm text-slate-700">
-                <span class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Comentario de Emanuel:</span>
+                <span class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Comentario de Emmanuel:</span>
                 "{{ $submission->student_notes }}"
             </div>
         @endif
@@ -167,7 +167,7 @@
                             <input type="number" step="0.1" min="0" max="10" name="grade" value="{{ $submission->grade }}" required placeholder="10.0" class="w-full px-4 py-3 rounded-xl border border-slate-300 font-bold text-base focus:ring-2 focus:ring-purple-500 focus:outline-none">
                         </div>
                         <div class="sm:col-span-2">
-                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Comentario para Emanuel</label>
+                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Comentario para Emmanuel</label>
                             <input type="text" name="teacher_feedback" value="{{ $submission->teacher_feedback }}" placeholder="Ej. ¡Excelente desarrollo! Solo cuida los signos en el ejercicio 4." class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-purple-500 focus:outline-none">
                         </div>
                     </div>
@@ -184,3 +184,4 @@
 
 </div>
 @endsection
+

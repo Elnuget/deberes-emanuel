@@ -1,6 +1,6 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
-@section('title', 'Inicio - Deberes Emanuel')
+@section('title', 'Inicio - Deberes Emmanuel')
 
 @section('content')
 <div class="space-y-8 pb-16 md:pb-6">
@@ -12,7 +12,7 @@
                 <i class="fa-solid fa-sparkles text-amber-300"></i> Portal de Alumno
             </span>
             <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
-                ¡Hola, Emanuel! 🚀
+                ¡Hola, Emmanuel! 🚀
             </h1>
             <p class="text-sm sm:text-base text-indigo-100/90 mt-2 font-medium">
                 Sube tus deberes de <strong class="text-white">Matemática</strong> y <strong class="text-white">Computación</strong> de forma rápida para que el profesor Carlos pueda revisarlos y calificarlos.
@@ -104,7 +104,7 @@
                 <i class="fa-solid fa-file-pdf text-indigo-600"></i>
                 <span>Ver e Imprimir PDF</span>
             </a>
-            <a href="https://api.whatsapp.com/send?text={{ urlencode('📄 Informe Oficial de Avances de Emanuel (Unidad 1): ' . url('/informe/unidad-1')) }}" target="_blank" class="px-3.5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-md transition-all active:scale-95 flex items-center justify-center gap-1.5" title="Compartir en WhatsApp">
+            <a href="https://api.whatsapp.com/send?text={{ urlencode('📄 Informe Oficial de Avances de Emmanuel (Unidad 1): ' . url('/informe/unidad-1')) }}" target="_blank" class="px-3.5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-md transition-all active:scale-95 flex items-center justify-center gap-1.5" title="Compartir en WhatsApp">
                 <i class="fa-brands fa-whatsapp text-sm"></i>
             </a>
         </div>
@@ -288,3 +288,4 @@
 
 </div>
 @endsection
+

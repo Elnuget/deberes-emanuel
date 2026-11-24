@@ -1,6 +1,6 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
-@section('title', 'Panel Docente - Deberes Emanuel')
+@section('title', 'Panel Docente - Deberes Emmanuel')
 
 @section('content')
 <div class="space-y-8 pb-16 md:pb-6" x-data="{ createModal: false }">
@@ -12,7 +12,7 @@
                 <i class="fa-solid fa-chalkboard-user"></i> Modo Profesor
             </span>
             <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">Panel de Revisión y Calificaciones</h1>
-            <p class="text-xs sm:text-sm text-slate-400 mt-1">Supervisión académica de Matemática y Computación para Emanuel</p>
+            <p class="text-xs sm:text-sm text-slate-400 mt-1">Supervisión académica de Matemática y Computación para Emmanuel</p>
         </div>
 
         <div class="flex items-center gap-2.5 flex-wrap">
@@ -44,7 +44,7 @@
                     <i class="fa-solid fa-check-double"></i>
                 </div>
                 <h3 class="font-bold text-slate-800 text-base">¡Al día! No hay entregas pendientes</h3>
-                <p class="text-xs text-slate-400 mt-1">Todas las tareas subidas por Emanuel han sido revisadas.</p>
+                <p class="text-xs text-slate-400 mt-1">Todas las tareas subidas por Emmanuel han sido revisadas.</p>
             </div>
         @else
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -66,14 +66,14 @@
 
                             @if($sub->student_notes)
                                 <div class="mt-3 p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700">
-                                    <span class="font-bold text-slate-500 block mb-0.5">Nota de Emanuel:</span>
+                                    <span class="font-bold text-slate-500 block mb-0.5">Nota de Emmanuel:</span>
                                     "{{ $sub->student_notes }}"
                                 </div>
                             @endif
 
                             @if($sub->link_url)
                                 <div class="mt-4">
-                                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Proyecto Web de Emanuel:</span>
+                                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Proyecto Web de Emmanuel:</span>
                                     <a href="{{ $sub->link_url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full p-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-xs text-emerald-900 font-bold group transition-all shadow-sm">
                                         <span class="truncate flex items-center gap-2">
                                             <i class="fa-solid fa-globe text-emerald-600 text-base"></i>
@@ -113,7 +113,7 @@
                                 </div>
                                 <div class="flex-1">
                                     <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Comentario / Felicitación</label>
-                                    <input type="text" name="teacher_feedback" placeholder="¡Excelente trabajo Emanuel!" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                    <input type="text" name="teacher_feedback" placeholder="¡Excelente trabajo Emmanuel!" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500">
                                 </div>
                             </div>
                             <button type="submit" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs shadow-md shadow-emerald-200 transition-all flex items-center justify-center gap-2">
@@ -130,7 +130,7 @@
     <div>
         <div class="flex items-center justify-between mb-4">
             <h2 class="text-xl font-extrabold text-slate-900 tracking-tight">
-                📋 Tareas Asignadas a Emanuel
+                📋 Tareas Asignadas a Emmanuel
             </h2>
         </div>
 
@@ -234,7 +234,7 @@
         </div>
     </div>
 
-    <!-- Modal: Asignar Nueva Tarea a Emanuel -->
+    <!-- Modal: Asignar Nueva Tarea a Emmanuel -->
     <div x-show="createModal" x-cloak class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
         <div @click.outside="createModal = false" class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-100">
             <div class="flex items-center justify-between pb-4 border-b border-slate-100">
@@ -244,7 +244,7 @@
                     </div>
                     <div>
                         <h3 class="font-extrabold text-lg text-slate-900">Asignar Nueva Tarea</h3>
-                        <p class="text-xs text-slate-500">Emanuel la verá en su panel de deberes</p>
+                        <p class="text-xs text-slate-500">Emmanuel la verá en su panel de deberes</p>
                     </div>
                 </div>
                 <button @click="createModal = false" class="w-8 h-8 rounded-full hover:bg-slate-100 text-slate-400 flex items-center justify-center">
@@ -292,3 +292,4 @@
 
 </div>
 @endsection
+

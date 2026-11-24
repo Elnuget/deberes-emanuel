@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es" class="h-full bg-slate-900">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Acceso Seguro - Deberes Emanuel</title>
+    <title>Acceso Seguro - Deberes Emmanuel</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome 6 -->
@@ -19,7 +19,7 @@
         [x-cloak] { display: none !important; }
     </style>
 </head>
-<body class="h-full flex items-center justify-center p-4 bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-slate-100 antialiased" x-data="{ selectedUser: 'emanuel', showPass: false }">
+<body class="h-full flex items-center justify-center p-4 bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-slate-100 antialiased" x-data="{ selectedUser: 'Emmanuel', showPass: false }">
 
     <div class="max-w-md w-full my-auto">
         <!-- Logo y Encabezado -->
@@ -27,7 +27,7 @@
             <div class="inline-flex w-16 h-16 rounded-2xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 items-center justify-center text-white text-2xl shadow-xl shadow-indigo-500/30 mb-3">
                 <i class="fa-solid fa-shield-halved"></i>
             </div>
-            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">Deberes Emanuel</h1>
+            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">Deberes Emmanuel</h1>
             <p class="text-xs sm:text-sm text-slate-400 mt-1 font-medium">Portal Protegido &bull; Matemática y Computación</p>
         </div>
 
@@ -51,9 +51,9 @@
             
             <!-- Selector Visual de Perfil -->
             <div class="grid grid-cols-2 gap-2 p-1.5 bg-slate-900/80 rounded-2xl mb-6 border border-slate-700/50">
-                <button type="button" @click="selectedUser = 'emanuel'; document.getElementById('loginInput').value = 'emanuel'" :class="{ 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md': selectedUser === 'emanuel', 'text-slate-400 hover:text-white': selectedUser !== 'emanuel' }" class="py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all">
+                <button type="button" @click="selectedUser = 'Emmanuel'; document.getElementById('loginInput').value = 'Emmanuel'" :class="{ 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md': selectedUser === 'Emmanuel', 'text-slate-400 hover:text-white': selectedUser !== 'Emmanuel' }" class="py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all">
                     <i class="fa-solid fa-user-graduate"></i>
-                    <span>Emanuel</span>
+                    <span>Emmanuel</span>
                 </button>
                 <button type="button" @click="selectedUser = 'carlos'; document.getElementById('loginInput').value = 'carlos'" :class="{ 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md': selectedUser === 'carlos', 'text-slate-400 hover:text-white': selectedUser !== 'carlos' }" class="py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all">
                     <i class="fa-solid fa-chalkboard-user"></i>
@@ -71,7 +71,7 @@
                         <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-500">
                             <i class="fa-solid fa-user text-xs"></i>
                         </span>
-                        <input type="text" name="login" id="loginInput" value="{{ old('login', 'emanuel') }}" required class="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 text-sm font-semibold focus:outline-none focus:border-indigo-500 transition-colors">
+                        <input type="text" name="login" id="loginInput" value="{{ old('login', 'Emmanuel') }}" required class="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white placeholder-slate-500 text-sm font-semibold focus:outline-none focus:border-indigo-500 transition-colors">
                     </div>
                 </div>
 
@@ -114,9 +114,10 @@
 
         <!-- Footer -->
         <p class="text-center text-xs text-slate-500 mt-6">
-            &copy; {{ date('Y') }} Deberes Emanuel &bull; Prof. Carlos Angulo
+            &copy; {{ date('Y') }} Deberes Emmanuel &bull; Prof. Carlos Angulo
         </p>
     </div>
 
 </body>
 </html>
+

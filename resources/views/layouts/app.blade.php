@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es" class="h-full bg-slate-50">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>@yield('title', 'Deberes Emanuel') - Portal de Entregas</title>
+    <title>@yield('title', 'Deberes Emmanuel') - Portal de Entregas</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -63,7 +63,7 @@
                     </div>
                     <div>
                         <div class="flex items-center gap-2">
-                            <span class="font-extrabold text-lg tracking-tight text-slate-900">Deberes Emanuel</span>
+                            <span class="font-extrabold text-lg tracking-tight text-slate-900">Deberes Emmanuel</span>
                             @if(auth()->user()->isTeacher())
                                 <span class="bg-purple-100 text-purple-700 text-xs px-2 py-0.5 rounded-full font-bold">Docente</span>
                             @else
@@ -320,3 +320,4 @@
     @yield('scripts')
 </body>
 </html>
+

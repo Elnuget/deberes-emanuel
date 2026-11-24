@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Http\Controllers;
 
@@ -248,7 +248,7 @@ class DashboardController extends Controller
             'status' => 'active',
         ]);
 
-        return redirect()->back()->with('success', '¡Tarea creada con éxito para Emanuel!');
+        return redirect()->back()->with('success', '¡Tarea creada con éxito para Emmanuel!');
     }
 
     public function downloadFile(SubmissionFile $file)
@@ -269,8 +269,8 @@ class DashboardController extends Controller
     public function reportUnit1()
     {
         $student = User::where('role', 'student')->first() ?? (object)[
-            'name' => 'Emanuel',
-            'email' => 'emanuel@deberesem.noxdata.site',
+            'name' => 'Emmanuel',
+            'email' => 'Emmanuel@deberesem.noxdata.site',
         ];
 
         $teacher = User::where('role', 'teacher')->first() ?? (object)[
@@ -300,3 +300,4 @@ class DashboardController extends Controller
         ));
     }
 }
+

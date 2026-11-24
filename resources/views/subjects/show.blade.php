@@ -1,6 +1,6 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
-@section('title', $subject->name . ' - Deberes Emanuel')
+@section('title', $subject->name . ' - Deberes Emmanuel')
 
 @section('content')
 @php
@@ -139,3 +139,4 @@
 
 </div>
 @endsection
+
