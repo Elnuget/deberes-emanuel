@@ -76,52 +76,13 @@
         }
     </style>
 </head>
-<body class="min-h-full py-4 sm:py-6 antialiased text-slate-800">
-
-    <!-- BARRA SUPERIOR DE ACCIONES (No imprimible) -->
-    <header class="no-print max-w-5xl mx-auto px-4 mb-4">
-        <div class="bg-white rounded-2xl p-3 sm:p-4 border border-slate-200 shadow-sm flex flex-wrap items-center justify-between gap-3">
-            <div class="flex items-center gap-3">
-                <a href="{{ url('/') }}" class="w-9 h-9 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold text-sm hover:bg-slate-800 transition-colors">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                </a>
-                <div>
-                    <h1 class="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Deberes Emmanuel</h1>
-                    <p class="text-[11px] text-slate-500 font-medium">Informe de Avance &bull; Unidad 1</p>
-                </div>
-            </div>
-
-            <div class="flex items-center gap-2 flex-wrap">
-                <!-- Botón de Imprimir / Guardar PDF -->
-                <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold shadow-xs transition-all active:scale-95">
-                    <i class="fa-solid fa-print"></i>
-                    <span>Imprimir / PDF</span>
-                </button>
-
-                <!-- Botón de Compartir en WhatsApp -->
-                <a href="https://api.whatsapp.com/send?text={{ urlencode('📋 Informe de Deberes de Emmanuel (Unidad 1): ' . url('/informe/unidad-1')) }}" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs transition-all active:scale-95">
-                    <i class="fa-brands fa-whatsapp text-sm"></i>
-                    <span>Compartir</span>
-                </a>
-
-                @auth
-                    <a href="{{ route('dashboard') }}" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 text-xs font-bold transition-colors">
-                        <i class="fa-solid fa-arrow-left"></i> Volver al Panel
-                    </a>
-                @else
-                    <a href="{{ route('login') }}" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 text-xs font-bold transition-colors">
-                        <i class="fa-solid fa-lock"></i> Acceso
-                    </a>
-                @endauth
-            </div>
-        </div>
-    </header>
+<body class="min-h-full py-4 sm:py-8 antialiased text-slate-800">
 
     <!-- DOCUMENTO PRINCIPAL -->
     <main class="max-w-5xl mx-auto px-4 sm:px-6">
         <div class="print-card bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-6 space-y-5">
             
-            <!-- TARJETITA SENCILLA DE CABECERA (SOLICITADA POR CARLOS) -->
+            <!-- TARJETITA SENCILLA DE CABECERA -->
             <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3.5 sm:p-4 flex flex-wrap items-center justify-between gap-3">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold text-base shrink-0">
@@ -187,7 +148,7 @@
                                                 </a>
                                             @endif
                                         </td>
-                                        <td class="py-2 px-3 text-slate-600 text-[11px]">
+                                        <td class="py-2.5 px-3 text-slate-600 text-[11px]">
                                             {{ $duty['detail'] }}
                                         </td>
                                         <td class="py-2 px-3 text-center whitespace-nowrap">
@@ -236,7 +197,7 @@
                                                 </a>
                                             @endif
                                         </td>
-                                        <td class="py-2 px-3 text-slate-600 text-[11px]">
+                                        <td class="py-2.5 px-3 text-slate-600 text-[11px]">
                                             {{ $duty['detail'] }}
                                         </td>
                                         <td class="py-2 px-3 text-center whitespace-nowrap">
@@ -254,19 +215,8 @@
 
             </div>
 
-            <!-- ENLACE DE AUDITORÍA DISCRETO (SIN FIRMAS FORMALES) -->
-            <div class="pt-3 border-t border-slate-100 text-center text-[10px] text-slate-400 avoid-break">
-                Plataforma <strong class="text-slate-600">Deberes Emmanuel</strong> &bull; Verificable en: 
-                <a href="{{ url('/informe/unidad-1') }}" class="text-slate-700 underline font-semibold">{{ url('/informe/unidad-1') }}</a>
-            </div>
-
         </div>
     </main>
-
-    <!-- PIE DE PÁGINA (Solo pantalla) -->
-    <footer class="no-print text-center py-4 text-xs text-slate-400">
-        &copy; {{ date('Y') }} Deberes Emmanuel &bull; Desarrollado por NoxData
-    </footer>
 
 </body>
 </html>
