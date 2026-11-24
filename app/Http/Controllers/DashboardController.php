@@ -376,78 +376,78 @@ class DashboardController extends Controller
             'email' => 'carlos@deberesem.noxdata.site',
         ];
 
-        // Planificación y temas de Matemática (Unidad 2)
+        // Planificación y actividades prácticas de Matemática (Unidad 2)
         $mathDuties = [
             [
-                'title' => 'Ajedrez y Sistemas Bidimensionales',
-                'detail' => 'Entrenamiento de foco, visión espacial y coordenadas (filas y columnas)',
+                'title' => 'Ajedrez y Sistema Bidimensional',
+                'detail' => 'Práctica de partidas, foco de atención y coordenadas del tablero',
                 'guide_url' => null,
                 'status' => 'Pendiente',
                 'grade' => 'Pendiente',
             ],
             [
                 'title' => 'Números Decimales',
-                'detail' => 'Valor posicional (décimos, centésimos), lectura y operaciones con coma',
+                'detail' => 'Operaciones con coma, décimos y centésimos en cuaderno',
                 'guide_url' => null,
                 'status' => 'Pendiente',
                 'grade' => 'Pendiente',
             ],
             [
                 'title' => 'Conversión Decimal - Fracción',
-                'detail' => 'Equivalencias numéricas exactas y problemas de aplicación cotidiana',
+                'detail' => 'Ejercicios de equivalencias y problemas prácticos de dinero y medidas',
                 'guide_url' => null,
                 'status' => 'Pendiente',
                 'grade' => 'Pendiente',
             ],
             [
                 'title' => 'Números Irracionales',
-                'detail' => 'Decimales infinitos no periódicos, noción de raíces inexactas y aproximación',
+                'detail' => 'Identificación de decimales infinitos y raíces inexactas',
                 'guide_url' => null,
                 'status' => 'Pendiente',
                 'grade' => 'Pendiente',
             ],
             [
-                'title' => 'Conjunto de los Números Reales (R)',
-                'detail' => 'Integración completa (N, Z, Q, I) y ubicación en la recta numérica',
+                'title' => 'Conjunto de Números Reales (R)',
+                'detail' => 'Integración de conjuntos y ubicación en la recta numérica',
                 'guide_url' => null,
                 'status' => 'Pendiente',
                 'grade' => 'Pendiente',
             ],
         ];
 
-        // Planificación y temas de Computación (Unidad 2: Diseño y tableros interactivos)
+        // Proyectos prácticos de Computación (Unidad 2 - 100% prácticos y reales)
         $compuDuties = [
             [
-                'title' => 'CSS y Diseño Visual',
-                'detail' => 'Estilizado de páginas HTML, selectores, paletas de colores y tipografía',
+                'title' => 'Ajedrez: Guía y Piezas',
+                'detail' => 'Página web con reglas, valor de las piezas y movimientos',
                 'link_url' => null,
                 'status' => 'Pendiente',
                 'grade' => 'Pendiente',
             ],
             [
-                'title' => 'CSS Grid y Coordenadas (Tableros)',
-                'detail' => 'Sistemas bidimensionales web: creación de cuadrículas y celdas 8x8 (tipo ajedrez)',
+                'title' => 'Tablero de Ajedrez Web',
+                'detail' => 'Página web con el tablero de 64 casillas y coordenadas',
                 'link_url' => null,
                 'status' => 'Pendiente',
                 'grade' => 'Pendiente',
             ],
             [
-                'title' => 'Lógica de Algoritmos y Reglas',
-                'detail' => 'Estructuración lógica de pasos, secuencias y toma de decisiones',
+                'title' => 'Calculadora Visual',
+                'detail' => 'Página web con botones numéricos y pantalla de operaciones',
                 'link_url' => null,
                 'status' => 'Pendiente',
                 'grade' => 'Pendiente',
             ],
             [
-                'title' => 'Interactividad Básica (JavaScript)',
-                'detail' => 'Eventos al hacer clic, botones dinámicos y respuestas visuales en la página',
+                'title' => 'Página de Investigación Web',
+                'detail' => 'Nuevo sitio web temático con imágenes, secciones y enlaces',
                 'link_url' => null,
                 'status' => 'Pendiente',
                 'grade' => 'Pendiente',
             ],
             [
-                'title' => 'Proyecto Web: Tablero Interactivo',
-                'detail' => 'Integración práctica de cuadrícula visual con reglas interactivas',
+                'title' => 'Portafolio Web Estilizado',
+                'detail' => 'Rediseño de su sitio personal con colores, tarjetas y fuentes',
                 'link_url' => null,
                 'status' => 'Pendiente',
                 'grade' => 'Pendiente',

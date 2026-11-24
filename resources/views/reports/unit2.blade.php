@@ -123,7 +123,7 @@
                             <span>1. Matemática (Ajedrez y Reales)</span>
                         </h3>
                         <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
-                            {{ count($mathDuties) }} Temas por cursar
+                            {{ count($mathDuties) }} Actividades prácticas
                         </span>
                     </div>
 
@@ -131,8 +131,8 @@
                         <table class="w-full text-left text-xs divide-y divide-slate-200">
                             <thead class="bg-slate-50 text-slate-600 font-bold text-[11px]">
                                 <tr>
-                                    <th class="py-2 px-3">Tema / Enfoque</th>
-                                    <th class="py-2 px-3">Detalle Metodológico</th>
+                                    <th class="py-2 px-3">Tema / Actividad</th>
+                                    <th class="py-2 px-3">Detalle Práctico</th>
                                     <th class="py-2 px-3 text-center">Estado</th>
                                 </tr>
                             </thead>
@@ -163,10 +163,10 @@
                     <div class="flex items-center justify-between pb-1 border-b border-emerald-100">
                         <h3 class="text-xs font-black text-emerald-950 uppercase tracking-wider flex items-center gap-1.5">
                             <i class="fa-solid fa-laptop-code text-emerald-600"></i>
-                            <span>2. Computación (Diseño y Tableros)</span>
+                            <span>2. Computación (Proyectos Web Prácticos)</span>
                         </h3>
                         <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
-                            {{ count($compuDuties) }} Temas por cursar
+                            {{ count($compuDuties) }} Proyectos prácticos
                         </span>
                     </div>
 
@@ -174,8 +174,8 @@
                         <table class="w-full text-left text-xs divide-y divide-slate-200">
                             <thead class="bg-slate-50 text-slate-600 font-bold text-[11px]">
                                 <tr>
-                                    <th class="py-2 px-3">Tema / Proyecto</th>
-                                    <th class="py-2 px-3">Detalle Metodológico</th>
+                                    <th class="py-2 px-3">Proyecto Web</th>
+                                    <th class="py-2 px-3">Detalle Práctico</th>
                                     <th class="py-2 px-3 text-center">Estado</th>
                                 </tr>
                             </thead>
