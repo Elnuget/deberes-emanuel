@@ -110,6 +110,14 @@
                         <span>Calificación: 10.0 / 10</span>
                     </span>
                 </div>
+
+                <!-- OBJETIVO CONCISO UNIDAD 1 -->
+                <div class="w-full pt-2.5 mt-0.5 border-t border-slate-200/80 text-[11px] text-slate-600 flex items-center gap-2">
+                    <span class="font-extrabold text-slate-700 uppercase tracking-wider text-[10px] bg-white px-2 py-0.5 rounded border border-slate-200 shrink-0">
+                        Objetivo
+                    </span>
+                    <span>Consolidar el cálculo aritmético fundamental y divisiones, e iniciar en la maquetación web práctica con HTML5 y ofimática.</span>
+                </div>
             </div>
 
             <!-- CONTENEDOR DE LAS 2 TABLAS LADO A LADO -->

@@ -110,6 +110,14 @@
                         <span>Calificación: Pendiente</span>
                     </span>
                 </div>
+
+                <!-- OBJETIVO CONCISO UNIDAD 2 -->
+                <div class="w-full pt-2.5 mt-0.5 border-t border-slate-200/80 text-[11px] text-slate-600 flex items-center gap-2">
+                    <span class="font-extrabold text-amber-800 uppercase tracking-wider text-[10px] bg-white px-2 py-0.5 rounded border border-amber-200 shrink-0">
+                        Objetivo
+                    </span>
+                    <span>Entrenar la concentración y visión espacial con ajedrez y números reales, construyendo un sistema web completo en Laravel.</span>
+                </div>
             </div>
 
             <!-- CONTENEDOR DE LAS 2 TABLAS LADO A LADO -->
