@@ -88,6 +88,9 @@
                     <a href="{{ route('report.unit1') }}" class="px-3.5 py-2 rounded-lg text-sm font-semibold {{ request()->routeIs('report.unit1') ? 'bg-purple-50 text-purple-600' : 'text-slate-600 hover:bg-slate-100' }} transition-colors">
                         <i class="fa-solid fa-file-invoice text-purple-500 mr-1.5"></i> Informe U1
                     </a>
+                    <a href="{{ route('report.unit2') }}" class="px-3.5 py-2 rounded-lg text-sm font-semibold {{ request()->routeIs('report.unit2') ? 'bg-amber-50 text-amber-600' : 'text-slate-600 hover:bg-slate-100' }} transition-colors">
+                        <i class="fa-solid fa-chess-knight text-amber-500 mr-1.5"></i> Informe U2
+                    </a>
                 </nav>
 
                 <!-- Acciones Derecha -->

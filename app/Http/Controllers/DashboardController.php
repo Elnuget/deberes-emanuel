@@ -363,5 +363,103 @@ class DashboardController extends Controller
             'compuDuties'
         ));
     }
+
+    public function reportUnit2()
+    {
+        $student = User::where('role', 'student')->first() ?? (object)[
+            'name' => 'Emmanuel',
+            'email' => 'emmanuel@deberesem.noxdata.site',
+        ];
+
+        $teacher = User::where('role', 'teacher')->first() ?? (object)[
+            'name' => 'Prof. Carlos Angulo',
+            'email' => 'carlos@deberesem.noxdata.site',
+        ];
+
+        // Planificación y temas de Matemática (Unidad 2)
+        $mathDuties = [
+            [
+                'title' => 'Ajedrez y Sistemas Bidimensionales',
+                'detail' => 'Entrenamiento de foco, visión espacial y coordenadas (filas y columnas)',
+                'guide_url' => null,
+                'status' => 'Pendiente',
+                'grade' => 'Pendiente',
+            ],
+            [
+                'title' => 'Números Decimales',
+                'detail' => 'Valor posicional (décimos, centésimos), lectura y operaciones con coma',
+                'guide_url' => null,
+                'status' => 'Pendiente',
+                'grade' => 'Pendiente',
+            ],
+            [
+                'title' => 'Conversión Decimal - Fracción',
+                'detail' => 'Equivalencias numéricas exactas y problemas de aplicación cotidiana',
+                'guide_url' => null,
+                'status' => 'Pendiente',
+                'grade' => 'Pendiente',
+            ],
+            [
+                'title' => 'Números Irracionales',
+                'detail' => 'Decimales infinitos no periódicos, noción de raíces inexactas y aproximación',
+                'guide_url' => null,
+                'status' => 'Pendiente',
+                'grade' => 'Pendiente',
+            ],
+            [
+                'title' => 'Conjunto de los Números Reales (R)',
+                'detail' => 'Integración completa (N, Z, Q, I) y ubicación en la recta numérica',
+                'guide_url' => null,
+                'status' => 'Pendiente',
+                'grade' => 'Pendiente',
+            ],
+        ];
+
+        // Planificación y temas de Computación (Unidad 2: Diseño y tableros interactivos)
+        $compuDuties = [
+            [
+                'title' => 'CSS y Diseño Visual',
+                'detail' => 'Estilizado de páginas HTML, selectores, paletas de colores y tipografía',
+                'link_url' => null,
+                'status' => 'Pendiente',
+                'grade' => 'Pendiente',
+            ],
+            [
+                'title' => 'CSS Grid y Coordenadas (Tableros)',
+                'detail' => 'Sistemas bidimensionales web: creación de cuadrículas y celdas 8x8 (tipo ajedrez)',
+                'link_url' => null,
+                'status' => 'Pendiente',
+                'grade' => 'Pendiente',
+            ],
+            [
+                'title' => 'Lógica de Algoritmos y Reglas',
+                'detail' => 'Estructuración lógica de pasos, secuencias y toma de decisiones',
+                'link_url' => null,
+                'status' => 'Pendiente',
+                'grade' => 'Pendiente',
+            ],
+            [
+                'title' => 'Interactividad Básica (JavaScript)',
+                'detail' => 'Eventos al hacer clic, botones dinámicos y respuestas visuales en la página',
+                'link_url' => null,
+                'status' => 'Pendiente',
+                'grade' => 'Pendiente',
+            ],
+            [
+                'title' => 'Proyecto Web: Tablero Interactivo',
+                'detail' => 'Integración práctica de cuadrícula visual con reglas interactivas',
+                'link_url' => null,
+                'status' => 'Pendiente',
+                'grade' => 'Pendiente',
+            ],
+        ];
+
+        return view('reports.unit2', compact(
+            'student',
+            'teacher',
+            'mathDuties',
+            'compuDuties'
+        ));
+    }
 }
 

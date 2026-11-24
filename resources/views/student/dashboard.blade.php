@@ -28,8 +28,12 @@
                     <span>Subir Computación</span>
                 </button>
                 <a href="{{ route('report.unit1') }}" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-purple-600/90 hover:bg-purple-600 text-white font-extrabold text-sm backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 transition-all active:scale-95">
-                    <i class="fa-solid fa-file-invoice text-amber-300"></i>
-                    <span>Informe Unidad 1 (PDF)</span>
+                    <i class="fa-solid fa-file-invoice text-purple-200"></i>
+                    <span>Informe U1</span>
+                </a>
+                <a href="{{ route('report.unit2') }}" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-amber-600/90 hover:bg-amber-600 text-white font-extrabold text-sm backdrop-blur-md border border-white/20 shadow-lg shadow-black/10 transition-all active:scale-95">
+                    <i class="fa-solid fa-chess-knight text-amber-200"></i>
+                    <span>Informe U2</span>
                 </a>
             </div>
         </div>
@@ -95,17 +99,18 @@
                 <span class="text-[10px] font-extrabold uppercase tracking-widest text-purple-300 bg-purple-500/20 px-2.5 py-0.5 rounded-full border border-purple-500/30">
                     Documento Oficial
                 </span>
-                <h3 class="font-extrabold text-base sm:text-lg text-white mt-1">Informe de Avance y Planificación — Unidad 1</h3>
-                <p class="text-xs text-slate-300">Consulta tus calificaciones, objetivos cumplidos y plan de la Unidad 2.</p>
+                <h3 class="font-extrabold text-base sm:text-lg text-white mt-1">Informes Académicos Oficiales</h3>
+                <p class="text-xs text-slate-300">Consulta tus calificaciones de Unidad 1 y el plan de la Unidad 2.</p>
             </div>
         </div>
-        <div class="flex items-center gap-2 w-full sm:w-auto">
-            <a href="{{ route('report.unit1') }}" class="w-full sm:w-auto text-center px-4 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-extrabold text-xs shadow-md transition-all active:scale-95 flex items-center justify-center gap-2">
-                <i class="fa-solid fa-file-pdf text-indigo-600"></i>
-                <span>Ver e Imprimir PDF</span>
+        <div class="flex items-center gap-2 w-full sm:w-auto flex-wrap">
+            <a href="{{ route('report.unit1') }}" class="flex-1 sm:flex-initial text-center px-3.5 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-extrabold text-xs shadow-md transition-all active:scale-95 flex items-center justify-center gap-1.5">
+                <i class="fa-solid fa-file-pdf text-purple-600"></i>
+                <span>Informe U1</span>
             </a>
-            <a href="https://api.whatsapp.com/send?text={{ urlencode('📄 Informe Oficial de Avances de Emmanuel (Unidad 1): ' . url('/informe/unidad-1')) }}" target="_blank" class="px-3.5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-md transition-all active:scale-95 flex items-center justify-center gap-1.5" title="Compartir en WhatsApp">
-                <i class="fa-brands fa-whatsapp text-sm"></i>
+            <a href="{{ route('report.unit2') }}" class="flex-1 sm:flex-initial text-center px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-white font-extrabold text-xs shadow-md transition-all active:scale-95 flex items-center justify-center gap-1.5">
+                <i class="fa-solid fa-chess-knight text-white"></i>
+                <span>Informe U2</span>
             </a>
         </div>
     </div>
