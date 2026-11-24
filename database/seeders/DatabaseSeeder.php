@@ -113,8 +113,16 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        // 5. Entregas de Computación de Emmanuel (4 deberes reales calificados con 10)
+        // 5. Entregas de Computación de Emmanuel (con Ofimática al inicio)
         $deberesCompu = [
+            [
+                'title' => 'Ofimática',
+                'link_url' => null,
+                'student_notes' => 'Mecanografía, procesador de textos (Word) y formato de documentos.',
+                'submitted_at' => now()->subDays(6)->setHour(10)->setMinute(0),
+                'grade' => 10.00,
+                'teacher_feedback' => '¡Excelente trabajo en ofimática! Gran soltura mecanográfica, rapidez en teclado y correcta estructuración de documentos de texto.',
+            ],
             [
                 'title' => 'Portafolio',
                 'link_url' => 'https://paholaguevara2977-eng.github.io/portafolio/',
@@ -169,8 +177,44 @@ class DatabaseSeeder extends Seeder
             );
         }
 
-        // 6. Matemática: asegurarnos de que quede SIN entregas
-        Submission::where('subject_id', $mate->id)->delete();
+        // 6. Entregas de Matemática de Emmanuel en Unidad 1
+        $deberesMate = [
+            [
+                'title' => 'División: 28.851 ÷ 88',
+                'assignment_id' => $asigMate1->id,
+                'notes' => 'División resuelta en cuaderno cuadriculado con procedimiento completo.',
+            ],
+            [
+                'title' => 'División: 5.932 ÷ 13',
+                'assignment_id' => $asigMate2->id,
+                'notes' => 'División resuelta con algoritmo paso a paso y comprobación.',
+            ],
+            [
+                'title' => 'Estimación y Redondeo: Draw lines to the best estimates',
+                'assignment_id' => $asigMate3->id,
+                'notes' => 'Taller de 7 operaciones de aproximación y redondeo.',
+            ],
+        ];
+
+        foreach ($deberesMate as $dm) {
+            Submission::updateOrCreate(
+                [
+                    'subject_id' => $mate->id,
+                    'student_id' => $Emmanuel->id,
+                    'title' => $dm['title'],
+                ],
+                [
+                    'assignment_id' => $dm['assignment_id'],
+                    'link_url' => null,
+                    'student_notes' => $dm['notes'],
+                    'status' => 'reviewed',
+                    'grade' => 10.00,
+                    'teacher_feedback' => 'Excelente orden, cálculo y presentación en el cuaderno.',
+                    'submitted_at' => now()->subDays(2),
+                    'reviewed_at' => now()->subDays(1),
+                ]
+            );
+        }
     }
 }
 

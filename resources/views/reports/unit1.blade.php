@@ -1,614 +1,313 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="h-full bg-slate-50">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matriz Curricular — Objetivos Unidad 1 | Emmanuel</title>
+    <title>Informe de Deberes Entregados - Unidad 1 | Emmanuel</title>
     
-    <!-- Metatags para Compartir -->
-    <meta property="og:title" content="Matriz Curricular — Objetivos Unidad 1 | Emmanuel">
-    <meta property="og:description" content="Matriz formal de objetivos consolidados y relación transversal entre Matemática y Computación.">
+    <!-- Metatags para Compartir en WhatsApp -->
+    <meta property="og:title" content="Informe de Deberes Entregados - Unidad 1 | Emmanuel">
+    <meta property="og:description" content="Reporte de deberes y proyectos entregados en Matemática y Computación. Tutor: Prof. Carlos Angulo.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ url('/informe/unidad-1') }}">
     
-    <!-- Fuentes Tipográficas Formales -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     
-    <!-- ESTILOS FORMALES 100% AUTOCONTENIDOS (Garantía de Carga Inmediata y Resiliencia Total) -->
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html, body {
-            min-height: 100%;
-            background-color: #f1f5f9;
-            color: #1e293b;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-        }
-
         body {
-            padding: 1.25rem 0.75rem;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        @media (min-width: 640px) {
-            body {
-                padding: 2.5rem 1.5rem;
-            }
-        }
-
-        .doc-container {
-            width: 100%;
-            max-width: 56rem;
-            margin: 0 auto;
-        }
-
-        .doc-sheet {
-            background-color: #ffffff;
-            border: 1px solid #cbd5e1;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-            padding: 1.5rem;
-        }
-
-        @media (min-width: 640px) {
-            .doc-sheet {
-                padding: 2.5rem 3rem;
-                border-radius: 1rem;
-            }
-        }
-
-        /* Encabezado */
-        .doc-header {
-            border-bottom: 2px solid #0f172a;
-            padding-bottom: 1.25rem;
-            margin-bottom: 1.75rem;
-        }
-
-        .doc-header-top {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 0.5rem;
-            font-size: 0.75rem;
-            color: #64748b;
-            margin-bottom: 0.65rem;
-        }
-
-        @media (min-width: 640px) {
-            .doc-header-top {
-                flex-direction: row;
-                align-items: flex-end;
-            }
-        }
-
-        .doc-tag {
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             color: #0f172a;
         }
 
-        .doc-title {
-            font-family: 'Merriweather', Georgia, serif;
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: #0f172a;
-            line-height: 1.3;
-            letter-spacing: -0.01em;
-        }
-
-        @media (min-width: 640px) {
-            .doc-title {
-                font-size: 1.75rem;
-            }
-        }
-
-        .doc-subtitle {
-            font-size: 0.8125rem;
-            color: #475569;
-            margin-top: 0.35rem;
-            line-height: 1.45;
-        }
-
-        /* Secciones */
-        .doc-section {
-            margin-bottom: 1.75rem;
-        }
-
-        .doc-section-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 0.65rem;
-        }
-
-        .doc-section-title {
-            font-family: 'Merriweather', Georgia, serif;
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #0f172a;
-        }
-
-        @media (min-width: 640px) {
-            .doc-section-title {
-                font-size: 1.05rem;
-            }
-        }
-
-        .doc-section-badge {
-            font-size: 0.6875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #64748b;
-        }
-
-        /* Tablas */
-        .table-responsive {
-            width: 100%;
-            overflow-x: auto;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.5rem;
-            background: #ffffff;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .formal-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.75rem;
-            min-width: 600px;
-        }
-
-        .formal-table th {
-            background-color: #f8fafc;
-            color: #334155;
-            font-weight: 700;
-            padding: 0.65rem 0.85rem;
-            border-bottom: 1px solid #e2e8f0;
-            text-transform: uppercase;
-            font-size: 0.6875rem;
-            letter-spacing: 0.05em;
-        }
-
-        .formal-table td {
-            padding: 0.65rem 0.85rem;
-            border-bottom: 1px solid #f1f5f9;
-            color: #475569;
-            vertical-align: top;
-            line-height: 1.45;
-        }
-
-        .formal-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        .formal-table tbody tr:hover td {
-            background-color: #f8fafc;
-        }
-
-        .item-name {
-            font-weight: 600;
-            color: #0f172a;
-        }
-
-        .item-desc {
-            color: #334155;
-        }
-
-        .item-link-u2 {
-            color: #475569;
-        }
-
-        .item-highlight {
-            font-weight: 600;
-            color: #0f172a;
-        }
-
-        /* Badges de Estado */
-        .badge-status {
-            display: inline-block;
-            padding: 0.2rem 0.5rem;
-            border-radius: 0.25rem;
-            font-size: 0.65rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            background-color: #ecfdf5;
-            color: #065f46;
-            border: 1px solid #a7f3d0;
-            white-space: nowrap;
-        }
-
-        .badge-grade {
-            display: inline-block;
-            padding: 0.2rem 0.5rem;
-            border-radius: 0.25rem;
-            font-size: 0.65rem;
-            font-weight: 700;
-            background-color: #f1f5f9;
-            color: #1e293b;
-            border: 1px solid #cbd5e1;
-            white-space: nowrap;
-        }
-
-        .cell-center {
-            text-align: center;
-        }
-
-        .symbol-connector {
-            font-size: 0.95rem;
-            color: #94a3b8;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        /* Pie de documento */
-        .doc-footer {
-            border-top: 1px solid #e2e8f0;
-            padding-top: 0.85rem;
-            margin-top: 1.75rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 0.35rem;
-            font-size: 0.6875rem;
-            color: #64748b;
-        }
-
-        @media (min-width: 640px) {
-            .doc-footer {
-                flex-direction: row;
-                align-items: center;
-            }
+        @page {
+            size: A4 portrait;
+            margin: 1cm;
         }
 
         @media print {
+            .no-print {
+                display: none !important;
+            }
             body {
                 background: #ffffff !important;
                 padding: 0 !important;
             }
-            .doc-sheet {
+            .print-card {
                 box-shadow: none !important;
                 border: none !important;
+                max-width: 100% !important;
                 padding: 0 !important;
+                margin: 0 !important;
             }
-            .formal-table {
-                min-width: 100% !important;
+            .avoid-break {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            .print-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 1rem !important;
+            }
+            a {
+                text-decoration: none !important;
+                color: inherit !important;
             }
         }
     </style>
 </head>
-<body>
+<body class="min-h-full py-4 sm:py-6 antialiased text-slate-800">
 
-    <main class="doc-container">
-        <article class="doc-sheet">
+    <!-- BARRA SUPERIOR DE ACCIONES (No imprimible) -->
+    <header class="no-print max-w-5xl mx-auto px-4 mb-4">
+        <div class="bg-white rounded-2xl p-3 sm:p-4 border border-slate-200 shadow-sm flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+                <a href="{{ url('/') }}" class="w-9 h-9 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold text-sm hover:bg-slate-800 transition-colors">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </a>
+                <div>
+                    <h1 class="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">Deberes Emmanuel</h1>
+                    <p class="text-[11px] text-slate-500 font-medium">Informe de Deberes Entregados &bull; Unidad 1</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 flex-wrap">
+                <!-- Botón de Imprimir / Guardar PDF -->
+                <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold shadow-xs transition-all active:scale-95">
+                    <i class="fa-solid fa-print"></i>
+                    <span>Imprimir / PDF</span>
+                </button>
+
+                <!-- Botón de Compartir en WhatsApp -->
+                <a href="https://api.whatsapp.com/send?text={{ urlencode('📋 Informe de Deberes Entregados de Emmanuel (Unidad 1): ' . url('/informe/unidad-1')) }}" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs transition-all active:scale-95">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span>Compartir</span>
+                </a>
+
+                @auth
+                    <a href="{{ route('dashboard') }}" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 text-xs font-bold transition-colors">
+                        <i class="fa-solid fa-arrow-left"></i> Volver al Panel
+                    </a>
+                @else
+                    <a href="{{ route('login') }}" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 text-xs font-bold transition-colors">
+                        <i class="fa-solid fa-lock"></i> Acceso
+                    </a>
+                @endauth
+            </div>
+        </div>
+    </header>
+
+    <!-- DOCUMENTO PRINCIPAL -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="print-card bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-8 space-y-6">
             
-            <!-- ENCABEZADO INSTITUCIONAL FORMAL -->
-            <header class="doc-header">
-                <div class="doc-header-top">
+            <!-- ENCABEZADO RESUMIDO -->
+            <div class="border-b border-slate-200 pb-4">
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
                     <div>
-                        <span class="doc-tag">Informe Pedagógico de Cierre</span>
-                        <div style="font-size: 0.6875rem; color: #64748b; margin-top: 0.15rem;">Ciclo Evaluado: Unidad 1</div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-[10px] font-extrabold uppercase tracking-widest text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
+                                SISTEMA EDUCATIVO NOXDATA
+                            </span>
+                            <span class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                                OFICIAL
+                            </span>
+                        </div>
+                        <h2 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">
+                            INFORME DE DEBERES ENTREGADOS — UNIDAD 1
+                        </h2>
+                        <p class="text-xs text-slate-500 mt-0.5">
+                            Registro de actividades prácticas, talleres y proyectos completados
+                        </p>
                     </div>
-                    <div style="font-size: 0.75rem;">
-                        <span style="color: #64748b;">Estudiante evaluado:</span>
-                        <strong style="color: #0f172a; margin-left: 0.25rem;">{{ $student->name ?? 'Emmanuel' }}</strong>
+
+                    <div class="text-left sm:text-right text-xs">
+                        <span class="text-slate-400 font-semibold block text-[11px]">Fecha de Emisión:</span>
+                        <span class="font-bold text-slate-900">Noviembre de 2026</span>
                     </div>
                 </div>
 
-                <h1 class="doc-title">
-                    Matriz Curricular de Objetivos y Relación Transversal
-                </h1>
-                <p class="doc-subtitle">
-                    Resumen esquemático de competencias adquiridas en <strong>Matemática</strong> y <strong>Computación</strong>, facilitando su revisión pedagógica y articulación hacia la Unidad 2.
-                </p>
-            </header>
+                <!-- FICHA DE DATOS COMPACTA -->
+                <div class="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                    <div>
+                        <span class="text-[10px] font-bold text-slate-400 uppercase block">Estudiante</span>
+                        <span class="font-extrabold text-slate-900">{{ $student->name ?? 'Emmanuel' }}</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold text-slate-400 uppercase block">Tutor Docente</span>
+                        <span class="font-extrabold text-slate-900">{{ $teacher->name ?? 'Prof. Carlos Angulo' }}</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold text-slate-400 uppercase block">Ciclo Evaluado</span>
+                        <span class="font-extrabold text-slate-900">Unidad 1</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold text-slate-400 uppercase block">Calificación</span>
+                        <span class="font-extrabold text-emerald-700">10.0 / 10 ⭐</span>
+                    </div>
+                </div>
+            </div>
 
-            <!-- TABLA 1: MATEMÁTICA -->
-            <section class="doc-section">
-                <div class="doc-section-header">
-                    <h2 class="doc-section-title">
-                        Tabla 1. Objetivos Consolidados en Matemática
-                    </h2>
-                    <span class="doc-section-badge">Cimientos Numéricos</span>
+            <!-- CONTENEDOR DE LAS 2 TABLAS LADO A LADO -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 print:grid-cols-2 print:gap-4 print-grid items-start avoid-break">
+                
+                <!-- TABLA 1: MATEMÁTICA -->
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between pb-1 border-b border-indigo-100">
+                        <h3 class="text-xs font-black text-indigo-950 uppercase tracking-wider flex items-center gap-1.5">
+                            <i class="fa-solid fa-calculator text-indigo-600"></i>
+                            <span>1. Matemática</span>
+                        </h3>
+                        <span class="text-[10px] font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200">
+                            {{ count($mathDuties) }} Entregas
+                        </span>
+                    </div>
+
+                    <div class="border border-slate-200 rounded-xl overflow-hidden shadow-2xs">
+                        <table class="w-full text-left text-xs divide-y divide-slate-200">
+                            <thead class="bg-slate-50 text-slate-600 font-bold text-[11px]">
+                                <tr>
+                                    <th class="py-2 px-3">Deber</th>
+                                    <th class="py-2 px-3">Detalle</th>
+                                    <th class="py-2 px-3 text-center">Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100 bg-white text-[11px]">
+                                @foreach($mathDuties as $duty)
+                                    <tr class="hover:bg-slate-50/50 transition-colors">
+                                        <td class="py-2.5 px-3 font-bold text-slate-900">
+                                            <div>{{ $duty['title'] }}</div>
+                                            @if(!empty($duty['guide_url']))
+                                                <a href="{{ $duty['guide_url'] }}" target="_blank" class="no-print text-[10px] text-indigo-600 hover:underline font-semibold inline-flex items-center gap-0.5 mt-0.5">
+                                                    <span>Guía</span>
+                                                    <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
+                                                </a>
+                                            @endif
+                                        </td>
+                                        <td class="py-2.5 px-3 text-slate-600 text-[11px]">
+                                            {{ $duty['detail'] }}
+                                        </td>
+                                        <td class="py-2.5 px-3 text-center whitespace-nowrap">
+                                            <span class="inline-flex items-center gap-1 font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 text-[10px]">
+                                                <i class="fa-solid fa-circle-check text-[9px]"></i>
+                                                <span>{{ $duty['status'] }}</span>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
-                <div class="table-responsive">
-                    <table class="formal-table">
-                        <thead>
-                            <tr>
-                                <th style="width: 26%;">Tema / Contenido</th>
-                                <th style="width: 34%;">Destreza Alcanzada (Poco texto)</th>
-                                <th style="width: 28%;">Importancia y Conexión (U2 / Lógica)</th>
-                                <th style="width: 12%; text-align: center;">Estado</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="item-name">
-                                    1. Jerarquía de Operaciones (ℕ)
-                                </td>
-                                <td class="item-desc">
-                                    Resolución metódica con paréntesis, productos y sumas sin salirse del orden.
-                                </td>
-                                <td class="item-link-u2">
-                                    Base obligatoria para ecuaciones y pensamiento secuencial algorítmico.
-                                </td>
-                                <td class="cell-center">
-                                    <span class="badge-status">Consolidado</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="item-name">
-                                    2. Recta Numérica y Opuestos (ℤ)
-                                </td>
-                                <td class="item-desc">
-                                    Ubicación espacial de positivos, negativos y distancias respecto al origen (0).
-                                </td>
-                                <td class="item-link-u2">
-                                    Introduce el sentido relativo de magnitud (temperatura, balance y ejes).
-                                </td>
-                                <td class="cell-center">
-                                    <span class="badge-status">Consolidado</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="item-name">
-                                    3. Fracciones y Equivalencias (ℚ)
-                                </td>
-                                <td class="item-desc">
-                                    Concepto parte-todo, simplificación rigurosa e identificación de razones iguales.
-                                </td>
-                                <td class="item-link-u2">
-                                    <span class="item-highlight">Puente directo a la U2:</span> una fracción es la antesala formal del número decimal.
-                                </td>
-                                <td class="cell-center">
-                                    <span class="badge-status">Consolidado</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="item-name">
-                                    4. División de Dos Cifras
-                                </td>
-                                <td class="item-desc">
-                                    Proceso largo mecánico, estimación de cociente y control estricto del residuo.
-                                </td>
-                                <td class="item-link-u2">
-                                    Desarrolla orden en cuadrícula y prepara la división con coma decimal.
-                                </td>
-                                <td class="cell-center">
-                                    <span class="badge-status">Consolidado</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="item-name">
-                                    5. Estimación y Redondeo
-                                </td>
-                                <td class="item-desc">
-                                    Aproximación mental rápida de resultados sin uso de calculadora.
-                                </td>
-                                <td class="item-link-u2">
-                                    Criterio crítico de auto-auditoría para descartar errores ilógicos por descuido.
-                                </td>
-                                <td class="cell-center">
-                                    <span class="badge-status">Consolidado</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+                <!-- TABLA 2: COMPUTACIÓN (CON OFIMÁTICA AL INICIO) -->
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between pb-1 border-b border-emerald-100">
+                        <h3 class="text-xs font-black text-emerald-950 uppercase tracking-wider flex items-center gap-1.5">
+                            <i class="fa-solid fa-laptop-code text-emerald-600"></i>
+                            <span>2. Computación</span>
+                        </h3>
+                        <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                            {{ count($compuDuties) }} Entregas
+                        </span>
+                    </div>
 
-            <!-- TABLA 2: COMPUTACIÓN -->
-            <section class="doc-section">
-                <div class="doc-section-header">
-                    <h2 class="doc-section-title">
-                        Tabla 2. Objetivos Consolidados en Computación
-                    </h2>
-                    <span class="doc-section-badge">Maquetación Web</span>
+                    <div class="border border-slate-200 rounded-xl overflow-hidden shadow-2xs">
+                        <table class="w-full text-left text-xs divide-y divide-slate-200">
+                            <thead class="bg-slate-50 text-slate-600 font-bold text-[11px]">
+                                <tr>
+                                    <th class="py-2 px-3">Deber / Proyecto</th>
+                                    <th class="py-2 px-3">Detalle</th>
+                                    <th class="py-2 px-3 text-center">Nota</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100 bg-white text-[11px]">
+                                @foreach($compuDuties as $duty)
+                                    <tr class="hover:bg-slate-50/50 transition-colors">
+                                        <td class="py-2.5 px-3 font-bold text-slate-900">
+                                            <div>{{ $duty['title'] }}</div>
+                                            @if(!empty($duty['link_url']))
+                                                <a href="{{ $duty['link_url'] }}" target="_blank" class="no-print text-[10px] text-emerald-700 hover:text-emerald-900 hover:underline font-bold inline-flex items-center gap-0.5 mt-0.5">
+                                                    <span>Ver web</span>
+                                                    <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
+                                                </a>
+                                            @endif
+                                        </td>
+                                        <td class="py-2.5 px-3 text-slate-600 text-[11px]">
+                                            {{ $duty['detail'] }}
+                                        </td>
+                                        <td class="py-2.5 px-3 text-center whitespace-nowrap">
+                                            <span class="inline-flex items-center gap-1 font-extrabold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 text-[10px]">
+                                                <i class="fa-solid fa-star text-[9px] text-amber-500"></i>
+                                                <span>{{ $duty['grade'] }}</span>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
-                <div class="table-responsive">
-                    <table class="formal-table">
-                        <thead>
-                            <tr>
-                                <th style="width: 26%;">Proyecto / Destreza</th>
-                                <th style="width: 34%;">Destreza Alcanzada (Poco texto)</th>
-                                <th style="width: 28%;">Importancia y Conexión (U2 / Lógica)</th>
-                                <th style="width: 12%; text-align: center;">Evaluación</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="item-name">
-                                    1. Estructura HTML5 Semántica
-                                </td>
-                                <td class="item-desc">
-                                    Maquetación de encabezados (&lt;h1&gt;-&lt;h6&gt;), párrafos y bloques estándar.
-                                </td>
-                                <td class="item-link-u2">
-                                    Análogo al orden matemático: código estricto sin etiquetas rotas ni abiertas.
-                                </td>
-                                <td class="cell-center">
-                                    <span class="badge-grade">10.0 / 10</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="item-name">
-                                    2. Hipervínculos e Interconexión
-                                </td>
-                                <td class="item-desc">
-                                    Rutas relativas y absolutas para navegar entre múltiples páginas web.
-                                </td>
-                                <td class="item-link-u2">
-                                    Conecta elementos aislados en un sistema funcional navegable.
-                                </td>
-                                <td class="cell-center">
-                                    <span class="badge-grade">10.0 / 10</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="item-name">
-                                    3. Tablas de Información
-                                </td>
-                                <td class="item-desc">
-                                    Modelado simétrico de filas (&lt;tr&gt;) y columnas (&lt;td&gt;) en horario escolar.
-                                </td>
-                                <td class="item-link-u2">
-                                    Correspondencia directa con la cuadrícula espacial de la división matemática.
-                                </td>
-                                <td class="cell-center">
-                                    <span class="badge-grade">10.0 / 10</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="item-name">
-                                    4. Publicación en GitHub Pages
-                                </td>
-                                <td class="item-desc">
-                                    Despliegue autónomo de proyectos web en servidores reales de internet.
-                                </td>
-                                <td class="item-link-u2">
-                                    <span class="item-highlight">Lleva la teoría a un resultado verificable</span> en línea, fomentando autonomía.
-                                </td>
-                                <td class="cell-center">
-                                    <span class="badge-grade">10.0 / 10</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="item-name">
-                                    5. Calidad y Eficacia de Entrega
-                                </td>
-                                <td class="item-desc">
-                                    100% de proyectos evaluados con retroalimentación docente superada.
-                                </td>
-                                <td class="item-link-u2">
-                                    Cierra la maquetación HTML5 y deja la estructura lista para hojas CSS (U2).
-                                </td>
-                                <td class="cell-center">
-                                    <span class="badge-grade">10.0 / 10</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+            </div>
 
-            <!-- TABLA 3: MATRIZ DE CORRESPONDENCIA TRANSVERSAL -->
-            <section class="doc-section" style="margin-bottom: 0;">
-                <div class="doc-section-header">
-                    <h2 class="doc-section-title">
-                        Tabla 3. Matriz de Correspondencia Transversal (Matemática ⟷ Computación)
-                    </h2>
-                    <span class="doc-section-badge">Sinergia Directa</span>
+            <!-- FIRMAS FORMALES MINIMALISTAS -->
+            <div class="pt-5 border-t border-slate-200 avoid-break">
+                <div class="grid grid-cols-2 gap-8 text-center pt-2">
+                    <div>
+                        <div class="h-10 flex items-end justify-center mb-1">
+                            <span class="font-serif italic text-sm text-slate-900 tracking-wider">Carlos Angulo</span>
+                        </div>
+                        <div class="border-t border-slate-300 w-44 mx-auto pt-1">
+                            <p class="text-xs font-bold text-slate-900">{{ $teacher->name ?? 'Prof. Carlos Angulo' }}</p>
+                            <p class="text-[10px] text-slate-400 font-medium">Tutor Académico</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="h-10 flex items-end justify-center mb-1">
+                            <span class="text-slate-300 text-xs italic">Firma de conformidad</span>
+                        </div>
+                        <div class="border-t border-slate-300 w-44 mx-auto pt-1">
+                            <p class="text-xs font-bold text-slate-900">Firma del Representante</p>
+                            <p class="text-[10px] text-slate-400 font-medium">Padre / Madre de Familia</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="table-responsive">
-                    <table class="formal-table">
-                        <thead>
-                            <tr style="background-color: #f1f5f9;">
-                                <th style="width: 30%;">Eje Matemático (Lógica)</th>
-                                <th style="width: 8%; text-align: center;">Vínculo</th>
-                                <th style="width: 30%;">Eje Computacional (Aplicación)</th>
-                                <th style="width: 32%;">Relación Formativa Integrada</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="item-name">
-                                    Jerarquía de Operaciones
-                                </td>
-                                <td class="symbol-connector">
-                                    ⇄
-                                </td>
-                                <td class="item-name">
-                                    Estructura Semántica HTML
-                                </td>
-                                <td class="item-desc">
-                                    Ambos exigen orden secuencial estricto sin ambigüedades.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="item-name">
-                                    Recta Numérica y Opuestos
-                                </td>
-                                <td class="symbol-connector">
-                                    ⇄
-                                </td>
-                                <td class="item-name">
-                                    Rutas e Hipervínculos
-                                </td>
-                                <td class="item-desc">
-                                    Comprensión de posición relativa y direccionamiento ordenado.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="item-name">
-                                    Fracciones y Equivalencias
-                                </td>
-                                <td class="symbol-connector">
-                                    ⇄
-                                </td>
-                                <td class="item-name">
-                                    Proporciones y Modelo Web
-                                </td>
-                                <td class="item-desc">
-                                    Noción de partes; cimiento clave para Decimales y estilos CSS (U2).
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="item-name">
-                                    División en Cuadrícula
-                                </td>
-                                <td class="symbol-connector">
-                                    ⇄
-                                </td>
-                                <td class="item-name">
-                                    Tablas y Horario HTML
-                                </td>
-                                <td class="item-desc">
-                                    Organización espacial rigurosa de datos en filas y columnas.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="item-name">
-                                    Estimación y Redondeo
-                                </td>
-                                <td class="symbol-connector">
-                                    ⇄
-                                </td>
-                                <td class="item-name">
-                                    Publicación en GitHub Pages
-                                </td>
-                                <td class="item-desc">
-                                    Criterio crítico de auto-revisión antes de dar por buena la entrega.
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="mt-4 text-center text-[10px] text-slate-400">
+                    Plataforma <strong class="text-slate-600">Deberes Emmanuel</strong> &bull; Verificable en línea en: 
+                    <a href="{{ url('/informe/unidad-1') }}" class="text-slate-700 underline font-semibold">{{ url('/informe/unidad-1') }}</a>
                 </div>
-            </section>
+            </div>
 
-            <!-- PIE DE HOJA FORMAL -->
-            <footer class="doc-footer">
-                <div>Informe académico oficial de competencias &bull; Cierre de la Unidad 1</div>
-                <div style="font-weight: 600; color: #334155;">Estudiante: Emmanuel &bull; Listo para Unidad 2</div>
-            </footer>
-
-        </article>
+        </div>
     </main>
+
+    <!-- PIE DE PÁGINA (Solo pantalla) -->
+    <footer class="no-print text-center py-4 text-xs text-slate-400">
+        &copy; {{ date('Y') }} Deberes Emmanuel &bull; Desarrollado por NoxData
+    </footer>
 
 </body>
 </html>

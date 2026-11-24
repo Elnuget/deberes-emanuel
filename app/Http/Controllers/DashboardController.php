@@ -270,7 +270,7 @@ class DashboardController extends Controller
     {
         $student = User::where('role', 'student')->first() ?? (object)[
             'name' => 'Emmanuel',
-            'email' => 'Emmanuel@deberesem.noxdata.site',
+            'email' => 'emmanuel@deberesem.noxdata.site',
         ];
 
         $teacher = User::where('role', 'teacher')->first() ?? (object)[
@@ -278,25 +278,75 @@ class DashboardController extends Controller
             'email' => 'carlos@deberesem.noxdata.site',
         ];
 
-        $mathSubject = Subject::where('slug', 'matematica')->first();
-        $compuSubject = Subject::where('slug', 'computacion')->first();
+        // Deberes entregados de Matemática (concisos y claros)
+        $mathDuties = [
+            [
+                'title' => 'División Larga',
+                'detail' => '28.851 ÷ 88 (Cuaderno)',
+                'guide_url' => asset('storage/guides/guia_division_28851_88.jpg'),
+                'status' => 'Entregado',
+                'grade' => '10 / 10',
+            ],
+            [
+                'title' => 'División en Cuadrícula',
+                'detail' => '5.932 ÷ 13 (Cuaderno)',
+                'guide_url' => asset('storage/guides/guia_division_5932_13.jpg'),
+                'status' => 'Entregado',
+                'grade' => '10 / 10',
+            ],
+            [
+                'title' => 'Taller de Estimación',
+                'detail' => 'Redondeo y aproximaciones',
+                'guide_url' => asset('storage/guides/guia_estimaciones_redondeo.jpg'),
+                'status' => 'Entregado',
+                'grade' => '10 / 10',
+            ],
+        ];
 
-        $compuSubmissions = Submission::where('subject_id', $compuSubject?->id)
-            ->where('student_id', $student?->id ?? 1)
-            ->orderBy('id', 'asc')
-            ->get();
-
-        $mathAssignments = Assignment::where('subject_id', $mathSubject?->id)
-            ->orderBy('id', 'asc')
-            ->get();
+        // Deberes entregados de Computación (con Ofimática al inicio)
+        $compuDuties = [
+            [
+                'title' => 'Ofimática',
+                'detail' => 'Mecanografía y procesador de textos',
+                'link_url' => null,
+                'status' => 'Entregado',
+                'grade' => '10 / 10',
+            ],
+            [
+                'title' => 'Portafolio Web',
+                'detail' => 'Estructura HTML5 y menú de proyectos',
+                'link_url' => 'https://paholaguevara2977-eng.github.io/portafolio/',
+                'status' => 'Entregado',
+                'grade' => '10 / 10',
+            ],
+            [
+                'title' => 'Biografía de Napoleón',
+                'detail' => 'Página web interactiva y multimedia',
+                'link_url' => 'https://paholaguevara2977-eng.github.io/portafolio/napoleon.html',
+                'status' => 'Entregado',
+                'grade' => '10 / 10',
+            ],
+            [
+                'title' => 'Guerra de los Cien Años',
+                'detail' => 'Cronología histórica en HTML',
+                'link_url' => 'https://paholaguevara2977-eng.github.io/portafolio/cien-anos.html',
+                'status' => 'Entregado',
+                'grade' => '10 / 10',
+            ],
+            [
+                'title' => 'Horario Semanal',
+                'detail' => 'Tablas y celdas HTML simétricas',
+                'link_url' => 'https://paholaguevara2977-eng.github.io/portafolio/horario.html',
+                'status' => 'Entregado',
+                'grade' => '10 / 10',
+            ],
+        ];
 
         return view('reports.unit1', compact(
             'student',
             'teacher',
-            'mathSubject',
-            'compuSubject',
-            'compuSubmissions',
-            'mathAssignments'
+            'mathDuties',
+            'compuDuties'
         ));
     }
 }
