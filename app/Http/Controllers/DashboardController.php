@@ -415,39 +415,39 @@ class DashboardController extends Controller
             ],
         ];
 
-        // Proyectos prácticos de Computación (Unidad 2 - 100% prácticos y reales)
+        // Proyectos prácticos de Computación en Laravel (Unidad 2: Sistema Web de Ajedrez)
         $compuDuties = [
             [
-                'title' => 'Ajedrez: Guía y Piezas',
-                'detail' => 'Página web con reglas, valor de las piezas y movimientos',
+                'title' => 'Tablero de Ajedrez en Blade',
+                'detail' => 'Maquetación de cuadrícula 8x8 con coordenadas y renderizado dinámico',
                 'link_url' => null,
                 'status' => 'Pendiente',
                 'grade' => 'Pendiente',
             ],
             [
-                'title' => 'Tablero de Ajedrez Web',
-                'detail' => 'Página web con el tablero de 64 casillas y coordenadas',
+                'title' => 'Registro de Partidas (CRUD en Laravel)',
+                'detail' => 'Formulario y base de datos para guardar rivales, turnos y resultados',
                 'link_url' => null,
                 'status' => 'Pendiente',
                 'grade' => 'Pendiente',
             ],
             [
-                'title' => 'Calculadora Visual',
-                'detail' => 'Página web con botones numéricos y pantalla de operaciones',
+                'title' => 'Reloj y Control de Turnos',
+                'detail' => 'Módulo de temporizador dinámico para partidas de ajedrez cronometradas',
                 'link_url' => null,
                 'status' => 'Pendiente',
                 'grade' => 'Pendiente',
             ],
             [
-                'title' => 'Página de Investigación Web',
-                'detail' => 'Nuevo sitio web temático con imágenes, secciones y enlaces',
+                'title' => 'Catálogo de Aperturas y Estrategias',
+                'detail' => 'Módulo con rutas y controlador para consultar jugadas clave y diagramas',
                 'link_url' => null,
                 'status' => 'Pendiente',
                 'grade' => 'Pendiente',
             ],
             [
-                'title' => 'Portafolio Web Estilizado',
-                'detail' => 'Rediseño de su sitio personal con colores, tarjetas y fuentes',
+                'title' => 'Dashboard Personal de Jugador',
+                'detail' => 'Panel interactivo en Laravel con estadísticas, victorias y perfil de usuario',
                 'link_url' => null,
                 'status' => 'Pendiente',
                 'grade' => 'Pendiente',
